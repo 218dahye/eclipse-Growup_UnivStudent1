@@ -1,0 +1,110 @@
+package project;
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+class bookImagePanel extends JPanel {
+	private Image bookimg;
+
+	public bookImagePanel(Image bookimg) {
+		this.bookimg = bookimg;
+		setSize(new Dimension(bookimg.getWidth(null), bookimg.getHeight(null)));
+		setPreferredSize(new Dimension(bookimg.getWidth(null), bookimg.getHeight(null)));// pack()한 후 프레임 사이즈가 맞게 나오지 않을
+																							// 때 설정해줌.
+		setLayout(null);
+	}
+
+	public void paintComponent(Graphics g) {
+		g.drawImage(bookimg, 0, 0, null);
+	}
+}
+
+class N_Study extends JFrame {
+	Container contentPane;
+	JButton button1 = new JButton("오픈소스소프트웨어");
+	JButton button2 = new JButton("데이터베이스");
+	JButton button3 = new JButton("정보보호");
+	JButton button4 = new JButton("뒤로가기");
+
+	N_Study(JLabel Lb1, JLabel Lb2) {
+		setTitle("공부하기");
+		contentPane = getContentPane();
+		setLayout(null);
+
+		JLabel SLb1 = new JLabel();
+		SLb1.setText("어떤 과목의 공부를 하시겠습니까?");
+		SLb1.setBounds(270, 140, 600, 20);
+
+		Font label4font = new Font("monospaced", Font.BOLD, 30);
+		SLb1.setFont(label4font);
+		
+		button1.setEnabled(true);
+		button2.setEnabled(true);
+		button3.setEnabled(true);
+		button4.setEnabled(true);
+
+		button1.setBounds(235, 260, 300, 50);
+		button2.setBounds(235, 330, 300, 50);
+		button3.setBounds(235, 400, 300, 50);
+		button4.setBounds(235, 470, 300, 50);
+
+		Font f4 = new Font("휴먼엑스포", Font.BOLD, 25);
+		button1.setFont(f4);
+		button2.setFont(f4);
+		button3.setFont(f4);
+		button4.setFont(f4);
+
+		button1.setBackground(Color.WHITE);
+		button2.setBackground(Color.WHITE);
+		button3.setBackground(Color.WHITE);
+		button4.setBackground(Color.WHITE);
+
+		bookImagePanel Panel = new bookImagePanel(new ImageIcon("./image/book.png").getImage());
+		Panel.setLayout(null);
+		Panel.add(SLb1);
+		Panel.add(button1);
+		Panel.add(button2);
+		Panel.add(button3);
+		Panel.add(button4);
+
+		contentPane.add(Panel);
+
+		button1.addActionListener(event -> {
+			init.N_intelli_up();
+			Lb1.setText("종강까지 D-" + init.DdayNumber + " 2020년  " + init.Month + "월  " + init.Day + "일  " + init.Today + "요일");
+			Lb2.setText("체력 " + init.Power + " 지능 " + init.Intelli + " 돈 " + init.Money + " 친화력 " + init.Friend);
+			dispose();
+		});
+		button2.addActionListener(event -> {
+			init.N_intelli_up();
+			Lb1.setText("종강까지 D-" + init.DdayNumber + " 2020년  " + init.Month + "월  " + init.Day + "일  " + init.Today + "요일");
+			Lb2.setText("체력 " + init.Power + " 지능 " + init.Intelli + " 돈 " + init.Money + " 친화력 " + init.Friend);
+			dispose();
+		});
+		button3.addActionListener(event -> {
+			init.N_intelli_up();
+			Lb1.setText("종강까지 D-" + init.DdayNumber + " 2020년  " + init.Month + "월  " + init.Day + "일  " + init.Today + "요일");
+			Lb2.setText("체력 " + init.Power + " 지능 " + init.Intelli + " 돈 " + init.Money + " 친화력 " + init.Friend);
+			dispose();
+		});
+		button4.addActionListener(event -> {
+			JOptionPane.showMessageDialog(null, "뒤로 이동합니다", "뒤로 이동", JOptionPane.INFORMATION_MESSAGE); // 메시지
+			dispose();
+		});
+
+		setSize(800, 680);
+		setVisible(true);
+	}
+
+}

@@ -31,14 +31,14 @@ class lectureImagePanel extends JPanel {
 }
 
 @SuppressWarnings("serial")
-class Lecture extends JFrame {
+class N_Lecture extends JFrame {
 	Container contentPane;
 	JButton button1 = new JButton("오픈소스소프트웨어");
 	JButton button2 = new JButton("데이터베이스");
 	JButton button3 = new JButton("정보보호");
 	JButton button4 = new JButton("뒤로가기");
 
-	Lecture(JLabel Lb1, JLabel Lb2) {
+	N_Lecture(JLabel Lb1, JLabel Lb2) {
 		setTitle("강의듣기");
 		contentPane = getContentPane();
 		setLayout(null);
@@ -82,19 +82,19 @@ class Lecture extends JFrame {
 		contentPane.add(Panel);
 
 		button1.addActionListener(event -> {
-			init.intelli_up();
+			init.N_intelli_up();
 			Lb1.setText("종강까지 D-" + init.DdayNumber + " 2020년  " + init.Month + "월  " + init.Day + "일  " + init.Today + "요일");
 			Lb2.setText("체력 " + init.Power + " 지능 " + init.Intelli + " 돈 " + init.Money + " 친화력 " + init.Friend);
 			dispose();
 		});
 		button2.addActionListener(event -> {
-			init.intelli_up();
+			init.N_intelli_up();
 			Lb1.setText("종강까지 D-" + init.DdayNumber + " 2020년  " + init.Month + "월  " + init.Day + "일  " + init.Today + "요일");
 			Lb2.setText("체력 " + init.Power + " 지능 " + init.Intelli + " 돈 " + init.Money + " 친화력 " + init.Friend);
 			dispose();
 		});
 		button3.addActionListener(event -> {
-			init.intelli_up();
+			init.N_intelli_up();
 			Lb1.setText("종강까지 D-" + init.DdayNumber + " 2020년  " + init.Month + "월  " + init.Day + "일  " + init.Today + "요일");
 			Lb2.setText("체력 " + init.Power + " 지능 " + init.Intelli + " 돈 " + init.Money + " 친화력 " + init.Friend);
 			dispose();
