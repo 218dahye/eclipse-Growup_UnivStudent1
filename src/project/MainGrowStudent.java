@@ -137,14 +137,14 @@ public class MainGrowStudent extends JFrame {
 
 		init.MT();
 		JLabel Lb1 = new JLabel();
-		Lb1.setBounds(30, 140, 600, 40);
+		Lb1.setBounds(10, 140, 700, 50);
 		Lb1.setText(
 				"종강까지 D-" + init.DdayNumber + " 2020년  " + init.Month + "월  " + init.Day + "일  " + init.Today + "요일");
 		N_MenuPanel.add(Lb1);
 		H_MenuPanel.add(Lb1);
 
 		JLabel Lb2 = new JLabel();
-		Lb2.setBounds(50, 180, 600, 30);
+		Lb2.setBounds(25, 180, 600, 50);
 		Lb2.setText("체력 " + init.Power + " 지능 " + init.Intelli + " 돈 " + init.Money + " 친화력 " + init.Friend);
 		N_MenuPanel.add(Lb2);
 		H_MenuPanel.add(Lb2);
