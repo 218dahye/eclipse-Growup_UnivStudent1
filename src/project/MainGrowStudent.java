@@ -55,7 +55,7 @@ public class MainGrowStudent extends JFrame {
 		setTitle("<< 대학생 키우기 >>");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		contentPane = getContentPane();
-		contentPane.setLayout(null);
+		setLayout(null);
 
 		ImagePanel StartPanel = new ImagePanel(new ImageIcon("./image/main.jpg").getImage());
 		subImagePanel SelectPanel = new subImagePanel(new ImageIcon("./image/main.jpg").getImage());
@@ -296,7 +296,7 @@ public class MainGrowStudent extends JFrame {
 		H_RestBtn.addActionListener(event -> {
 			new H_Rest(Lb1, Lb2);
 		}); // H_Rest 클래스 이동
-		
+
 		HardBtn.addActionListener(e -> {
 			H_MenuPanel.add(Lb1);
 			H_MenuPanel.add(Lb2);
@@ -336,7 +336,7 @@ public class MainGrowStudent extends JFrame {
 		H_RestBtn.setBackground(Color.WHITE);
 
 		pack();
-		setSize(800, 680);
+		setSize(660, 700);
 		setVisible(true);
 	}
 
