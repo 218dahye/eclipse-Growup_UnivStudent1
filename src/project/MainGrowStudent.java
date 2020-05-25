@@ -52,6 +52,7 @@ public class MainGrowStudent extends JFrame {
 	Container contentPane;
 	ImagePanel StartPanel = new ImagePanel(new ImageIcon("./image/main.jpg").getImage());
 	subImagePanel LevelPanel = new subImagePanel(new ImageIcon("./image/main.jpg").getImage());
+	subImagePanel HomePanel = new subImagePanel(new ImageIcon("./image/Room.jpg").getImage());
 	subImagePanel N_MenuPanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
 	subImagePanel H_MenuPanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
 	subImagePanel powers = new subImagePanel(new ImageIcon("./image/power.png").getImage()); // 이미지 패널 객체 생성
@@ -91,14 +92,14 @@ public class MainGrowStudent extends JFrame {
 		StartBt.setBackground(new Color(255, 255, 255));
 		StartBt.setBounds(0, 410, 360, 45);
 		StartBt.setBorderPainted(false);
-		// StartBt.setFocusPainted(false);
+		StartBt.setFocusPainted(false);
 
 		EndBt = new JButton(" 게임 종료 <<");
 		EndBt.setFont(f1);
 		EndBt.setBackground(new Color(255, 255, 255));
 		EndBt.setBounds(290, 470, 360, 45);
 		EndBt.setBorderPainted(false);
-		// EndBt.setFocusPainted(false);
+		EndBt.setFocusPainted(false);
 
 		StartPanel.add(label1);
 		StartPanel.add(label1_1);
@@ -149,19 +150,61 @@ public class MainGrowStudent extends JFrame {
 		JLabel Lb1 = new JLabel();
 		Lb1.setText("종강까지 단, D-" + init.DdayNumber + "!");
 		Lb1.setFont(weekfont);
-		Lb1.setBounds(10, 30, 640, 50);
+		Lb1.setBounds(20, 10, 640, 50);
 
 		JLabel dateLb = new JLabel();
 		dateLb.setText("Today 2020 " + init.Month + "월" + init.Day + "일  " + init.Today + "요일");
 		Font datefont = new Font("HY견고딕", Font.PLAIN, 23);
 		dateLb.setFont(datefont);
-		dateLb.setBounds(10, 0, 600, 40);
+		dateLb.setBounds(310, 10, 600, 40);
 
 		JLabel Lb2 = new JLabel();
-		Lb2.setBounds(350, 0, 600, 50);
-		Font Lb2font = new Font("HY견고딕", Font.PLAIN, 15);
+		Lb2.setBounds(70, 100, 600, 50);
+		Font Lb2font = new Font("HY견고딕", Font.PLAIN, 25);
 		Lb2.setFont(Lb2font);
-		Lb2.setText("체력 " + init.Power + " 지능 " + init.Intelli + " 돈 " + init.Money + " 친화력 " + init.Friend); // (N+H)ManuPanel화면
+		Lb2.setText("<체력 " + init.Power + " 지능 " + init.Intelli + " 돈 " + init.Money + " 친화력 " + init.Friend + ">"); // (N+H)ManuPanel화면
+
+		JButton N_MoveBtn = new JButton("이동하기");
+		N_MoveBtn.setFont(f1);
+		N_MoveBtn.setBackground(new Color(255, 255, 255));
+		N_MoveBtn.setBounds(0, 410, 360, 45);
+		N_MoveBtn.setBorderPainted(false);
+		N_MoveBtn.setFocusPainted(false);
+
+		JButton H_MoveBtn = new JButton("이동하기");
+		H_MoveBtn.setFont(f1);
+		H_MoveBtn.setBackground(new Color(255, 255, 255));
+		H_MoveBtn.setBounds(0, 410, 360, 45);
+		H_MoveBtn.setBorderPainted(false);
+		H_MoveBtn.setFocusPainted(false);
+
+		NormalBtn.addActionListener(e -> {
+			HomePanel.add(Lb1);
+			HomePanel.add(dateLb);
+			HomePanel.add(Lb2);
+			HomePanel.add(N_MoveBtn);
+
+			HomePanel.setBounds(0, 73, 640, 640);
+			contentPane.setBounds(0, 0, 640, 109);
+			contentPane.add(HomePanel);
+			LevelPanel.setVisible(false);
+			contentPane.setVisible(true);
+
+		}); // 난이도 보통인 N_MenuPanel로 이동
+
+		HardBtn.addActionListener(e -> {
+			HomePanel.add(Lb1);
+			HomePanel.add(dateLb);
+			HomePanel.add(Lb2);
+			HomePanel.add(H_MoveBtn);
+
+			HomePanel.setBounds(0, 73, 640, 640);
+			contentPane.setBounds(0, 0, 640, 109);
+			contentPane.add(HomePanel);
+			LevelPanel.setVisible(false);
+			contentPane.setVisible(true);
+
+		}); // 난이도 보통인 H_MenuPanel로 이동
 
 		JButton LBtn = new JButton("강의 듣기");
 		LBtn.setFont(활동선택버튼폰트);
@@ -182,7 +225,8 @@ public class MainGrowStudent extends JFrame {
 
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
-						JOptionPane.WARNING_MESSAGE); // 메시지 출력
+						JOptionPane.WARNING_MESSAGE); // 메시지출력
+				StartPanel.setVisible(false);
 			} else if (init.Money <= 0) {
 				JOptionPane.showMessageDialog(null, "돈이 없어서 더 이상 할 수 없습니다", "경고", JOptionPane.WARNING_MESSAGE); // 메시지
 																												// 출력
@@ -289,11 +333,29 @@ public class MainGrowStudent extends JFrame {
 		RestBtn.addActionListener(event -> {
 			new N_Rest(Lb1, Lb2);
 		}); // N_Rest 클래스 이동
+		
+		JButton BackBtn = new JButton("뒤로가기");
+		BackBtn.setFont(활동선택버튼폰트);
+		BackBtn.setBounds(80, 250, 112, 30);
+		BackBtn.setBackground(Color.WHITE);
+		BackBtn.setFocusPainted(false);
+		BackBtn.setBorderPainted(false);
+		
+		BackBtn.addActionListener(event -> {
+			HomePanel.add(Lb1);
+			HomePanel.add(dateLb);
+			HomePanel.add(Lb2);
+			HomePanel.add(N_MoveBtn);
 
-		NormalBtn.addActionListener(e -> {
+			HomePanel.setBounds(0, 73, 640, 640);
+			contentPane.setBounds(0, 0, 640, 109);
+			contentPane.add(HomePanel);
+			N_MenuPanel.setVisible(false);
+			HomePanel.setVisible(true);
+		});
+
+		N_MoveBtn.addActionListener(e -> {
 			N_MenuPanel.add(Lb1);
-			N_MenuPanel.add(dateLb);
-			N_MenuPanel.add(Lb2);
 			N_MenuPanel.add(LBtn);
 			N_MenuPanel.add(detail);
 			N_MenuPanel.add(detailL); // 강의버튼
@@ -310,7 +372,8 @@ public class MainGrowStudent extends JFrame {
 			N_MenuPanel.add(RestBtn);
 			N_MenuPanel.add(rdetail);
 			N_MenuPanel.add(rdetailL); // 휴식버튼
-
+			N_MenuPanel.add(BackBtn);
+			
 			powers.setLayout(null);
 			powers.setBounds(25, 5, 80, 80);
 			powerlabel.setBounds(15, 15, 40, 30);
@@ -321,11 +384,11 @@ public class MainGrowStudent extends JFrame {
 
 			N_MenuPanel.setBounds(0, 110, 640, 640);
 			contentPane.add(N_MenuPanel);
-			LevelPanel.setVisible(false);
+			HomePanel.setVisible(false);
 			contentPane.setBounds(0, 0, 640, 109);
 			contentPane.setVisible(true);
-		}); // 난이도 보통인 N_MenuPanel로 이동
-		
+
+		});
 		JLabel Hdetail = new JLabel("[요구 능력치: 체력 30]");
 		Hdetail.setFont(활동선택폰트);
 		Hdetail.setBounds(197, 110, 230, 30);
@@ -355,7 +418,7 @@ public class MainGrowStudent extends JFrame {
 		JLabel HsdetailL = new JLabel("[얻을 수 있는 능력치: 지능 5~20]");
 		HsdetailL.setFont(활동선택폰트);
 		HsdetailL.setBounds(220, 380, 230, 30);
-		
+
 		SBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
@@ -376,7 +439,7 @@ public class MainGrowStudent extends JFrame {
 		JLabel Hbonus = new JLabel("보너스를 받을 수 있을지도?");
 		Hbonus.setFont(bonusfont);
 		Hbonus.setBounds(380, 183, 200, 30);
-		
+
 		PtBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
@@ -393,7 +456,7 @@ public class MainGrowStudent extends JFrame {
 		JLabel HPlaydetailL = new JLabel("[얻을 수 있는 능력치: 친화력  1~20]");
 		HPlaydetailL.setFont(활동선택폰트);
 		HPlaydetailL.setBounds(410, 355, 230, 30);
-		
+
 		PlayBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
@@ -413,31 +476,30 @@ public class MainGrowStudent extends JFrame {
 		JLabel HrdetailL = new JLabel("[얻을 수 있는 능력치: 체력 1~30]");
 		HrdetailL.setFont(활동선택폰트);
 		HrdetailL.setBounds(55, 305, 200, 30);
-		
+
 		RestBtn.addActionListener(event -> {
 			new H_Rest(Lb1, Lb2);
 		}); // H_Rest 클래스 이동
 
-		HardBtn.addActionListener(e -> {
+		H_MoveBtn.addActionListener(e -> {
 			H_MenuPanel.add(Lb1);
-			H_MenuPanel.add(dateLb);
-			H_MenuPanel.add(Lb2);
 			H_MenuPanel.add(LBtn);
 			H_MenuPanel.add(Hdetail);
-			H_MenuPanel.add(HdetailL); // 강의버튼
-			H_MenuPanel.add(SBtn);
+			H_MenuPanel.add(HdetailL);// 강의버튼
+			H_MenuPanel.add(SBtn); 
 			H_MenuPanel.add(Hsdetail);
-			H_MenuPanel.add(HsdetailL); // 공부하기버튼
+			H_MenuPanel.add(HsdetailL); // 공부하기버튼 
 			H_MenuPanel.add(PtBtn);
 			H_MenuPanel.add(Hpdetail);
 			H_MenuPanel.add(HpdetailL);
-			H_MenuPanel.add(Hbonus); // 알바버튼
+			H_MenuPanel.add(Hbonus); // 알바버튼 
 			H_MenuPanel.add(PlayBtn);
 			H_MenuPanel.add(HPlaydetail);
 			H_MenuPanel.add(HPlaydetailL); // 친구와놀기버튼
 			H_MenuPanel.add(RestBtn);
 			H_MenuPanel.add(Hrdetail);
 			H_MenuPanel.add(HrdetailL); // 휴식버튼
+			H_MenuPanel.add(BackBtn);
 
 			powers.setLayout(null);
 			powers.setBounds(25, 5, 80, 80);
@@ -449,11 +511,11 @@ public class MainGrowStudent extends JFrame {
 
 			H_MenuPanel.setBounds(0, 110, 640, 640);
 			contentPane.add(H_MenuPanel);
-			LevelPanel.setVisible(false);
+			HomePanel.setVisible(false);
 			contentPane.setBounds(0, 0, 640, 109);
 			contentPane.setVisible(true);
-		}); // 난이도 보통인 H_MenuPanel로 이동
 
+		});
 		setSize(655, 650);
 		setVisible(true);
 	}
