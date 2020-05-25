@@ -54,21 +54,12 @@ public class MainGrowStudent extends JFrame {
 	subImagePanel LevelPanel = new subImagePanel(new ImageIcon("./image/main.jpg").getImage());
 	subImagePanel N_MenuPanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
 	subImagePanel H_MenuPanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
-	subImagePanel WeekPanel = new subImagePanel(new ImageIcon("./image/week.png").getImage());// 이미지 패널 객체 생성
-	subImagePanel powers = new subImagePanel(new ImageIcon("./image/power.png").getImage());
-	JButton MBtn = new JButton("일정채우기");
-	JButton ThBtn = new JButton("일정채우기");
-	JButton WBtn = new JButton("일정채우기");
-	JButton TuBtn = new JButton("일정채우기");
-	JButton FBtn = new JButton("일정채우기");
-	JButton SatBtn = new JButton("일정채우기");
-	JButton SunBtn = new JButton("일정채우기");
+	subImagePanel powers = new subImagePanel(new ImageIcon("./image/power.png").getImage()); // 이미지 패널 객체 생성
 	JLabel click = new JLabel("click");
-	Font f4 = new Font("휴먼엑스포", Font.BOLD, 18);
 	JLabel powerlabel = new JLabel("" + init.Power);
 	JLabel 체력확인레이블 = new JLabel();
 	Font 활동선택버튼폰트 = new Font("HY견고딕", Font.BOLD, 15);
-	Font 활동선택폰트 = new Font("HY견고딕", Font.PLAIN, 12);
+	Font 활동선택폰트 = new Font("HY견고딕", Font.PLAIN, 13);
 	Font powerfont = new Font("HY헤드라인M", Font.BOLD, 15);
 
 	MainGrowStudent() {
@@ -140,7 +131,7 @@ public class MainGrowStudent extends JFrame {
 		HardBtn.setFont(f1);
 		HardBtn.setBackground(new Color(255, 255, 255));
 		HardBtn.setBounds(290, 470, 360, 45);
-		HardBtn.setBorderPainted(false); // SelectPanel 화면
+		HardBtn.setBorderPainted(false); // LevelPanel 화면
 
 		StartBt.addActionListener(e -> {
 			LevelPanel.add(Lb3);
@@ -150,69 +141,48 @@ public class MainGrowStudent extends JFrame {
 			contentPane.add(LevelPanel);
 			StartPanel.setVisible(false);
 			contentPane.setVisible(true);
-		}); // StartBt 버튼 누르면 SelectPanel 난이도 선택 패널로 이동
+		}); // StartBt 버튼 누르면 LevelPanel 난이도 선택 패널로 이동
 
 		init.MT();
 
-		Font weekfont = new Font("휴먼둥근헤드라인", Font.PLAIN, 30);
-		JLabel week = new JLabel();
-		week.setText("종강까지 단 D-" + init.DdayNumber + "일!");
-		week.setFont(weekfont);
-		week.setBounds(340, 10, 600, 40);
-		WeekPanel.add(week);
-		setBackground(Color.WHITE);
-
+		Font weekfont = new Font("휴먼둥근헤드라인", Font.PLAIN, 20);
 		JLabel Lb1 = new JLabel();
 		Lb1.setText("종강까지 단, D-" + init.DdayNumber + "!");
 		Lb1.setFont(weekfont);
-		Lb1.setBounds(10, 0, 640, 50);
+		Lb1.setBounds(10, 30, 640, 50);
 
 		JLabel dateLb = new JLabel();
 		dateLb.setText("Today 2020 " + init.Month + "월" + init.Day + "일  " + init.Today + "요일");
-		Font datefont = new Font("HY견고딕", Font.PLAIN, 18);
+		Font datefont = new Font("HY견고딕", Font.PLAIN, 23);
 		dateLb.setFont(datefont);
-		dateLb.setBounds(45, 8, 640, 50);
-
-		N_MenuPanel.setBounds(0, 73, 640, 640);
-		H_MenuPanel.setBounds(0, 73, 640, 640);
-		N_MenuPanel.add(Lb1);
-		H_MenuPanel.add(Lb1);
-		N_MenuPanel.add(dateLb);
-		H_MenuPanel.add(dateLb); //
+		dateLb.setBounds(10, 0, 600, 40);
 
 		JLabel Lb2 = new JLabel();
-		Lb2.setBounds(25, 180, 600, 50);
-		Lb2.setText("체력 " + init.Power + " 지능 " + init.Intelli + " 돈 " + init.Money + " 친화력 " + init.Friend);
-		N_MenuPanel.add(Lb2);
-		H_MenuPanel.add(Lb2); // (N+H)ManuPanel 화면
-
-		JLabel detail = new JLabel("[요구 능력치: 체력 25]");
-		detail.setFont(활동선택폰트);
-
-		JLabel detailL = new JLabel("[얻을 수 있는 능력치: 지식+5]");
-		detailL.setFont(활동선택폰트);
-
-		powers.setLayout(null);
-		powers.setBounds(25, 5, 80, 80);
-
-		powerlabel.setBounds(15, 15, 40, 30);
-		powerlabel.setFont(powerfont);
-		powers.add(powerlabel);
-		powers.setVisible(true);
-		contentPane.add(powers);
+		Lb2.setBounds(350, 0, 600, 50);
+		Font Lb2font = new Font("HY견고딕", Font.PLAIN, 15);
+		Lb2.setFont(Lb2font);
+		Lb2.setText("체력 " + init.Power + " 지능 " + init.Intelli + " 돈 " + init.Money + " 친화력 " + init.Friend); // (N+H)ManuPanel화면
 
 		JButton LBtn = new JButton("강의 듣기");
 		LBtn.setFont(활동선택버튼폰트);
-		N_MenuPanel.add(LBtn);
-		N_MenuPanel.setBounds(0, 110, 640, 640);
-		LBtn.setBounds(170, 258, 300, 48);
+		LBtn.setBounds(195, 80, 130, 30);
+		LBtn.setBackground(new Color(153, 239, 90));
+		LBtn.setBorderPainted(false);
+		LBtn.setFocusPainted(false);
+
+		JLabel detail = new JLabel("[요구 능력치: 체력 20]");
+		detail.setFont(활동선택폰트);
+		detail.setBounds(197, 110, 230, 30);
+
+		JLabel detailL = new JLabel("[얻을 수 있는 능력치: 지식 5~20]");
+		detailL.setFont(활동선택폰트);
+		detailL.setBounds(155, 135, 230, 30);
 
 		LBtn.addActionListener(event -> {
 
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
-
 			} else if (init.Money <= 0) {
 				JOptionPane.showMessageDialog(null, "돈이 없어서 더 이상 할 수 없습니다", "경고", JOptionPane.WARNING_MESSAGE); // 메시지
 																												// 출력
@@ -221,10 +191,22 @@ public class MainGrowStudent extends JFrame {
 				new N_Lecture(Lb1, Lb2);
 		}); // N_Lecture 클래스 이동
 
-		JButton N_SBtn = new JButton("공부하기");
-		N_MenuPanel.add(N_SBtn);
-		N_SBtn.setBounds(170, 328, 300, 48);
-		N_SBtn.addActionListener(event -> {
+		JButton SBtn = new JButton("공부하기");
+		SBtn.setFont(활동선택버튼폰트);
+		SBtn.setBounds(255, 325, 100, 30);
+		SBtn.setBackground(new Color(210, 89, 242));
+		SBtn.setFocusPainted(false);
+		SBtn.setBorderPainted(false);
+
+		JLabel sdetail = new JLabel("[요구능력치: 체력 15]");
+		sdetail.setFont(활동선택폰트);
+		sdetail.setBounds(245, 355, 230, 30);
+
+		JLabel sdetailL = new JLabel("[얻을 수 있는 능력치: 지능 5~20]");
+		sdetailL.setFont(활동선택폰트);
+		sdetailL.setBounds(220, 380, 230, 30);
+
+		SBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
@@ -233,10 +215,27 @@ public class MainGrowStudent extends JFrame {
 				new N_Study(Lb1, Lb2);
 		}); // N_Study 클래스 이동
 
-		JButton N_PtBtn = new JButton("알바가기");
-		N_MenuPanel.add(N_PtBtn);
-		N_PtBtn.setBounds(170, 398, 300, 48);
-		N_PtBtn.addActionListener(event -> {
+		JButton PtBtn = new JButton("알바가기");
+		PtBtn.setFont(활동선택버튼폰트);
+		PtBtn.setBounds(390, 100, 100, 30);
+		PtBtn.setBackground(new Color(241, 228, 90));
+		PtBtn.setFocusPainted(false);
+		PtBtn.setBorderPainted(false);
+
+		JLabel pdetail = new JLabel("[요구 능력치: 체력 25]");
+		pdetail.setFont(활동선택폰트);
+		pdetail.setBounds(385, 133, 230, 30);
+
+		JLabel pdetailL = new JLabel("[얻을 수 있는 능력치: 돈 2~40000]");
+		pdetailL.setFont(활동선택폰트);
+		pdetailL.setBounds(359, 158, 230, 30);
+
+		JLabel bonus = new JLabel("보너스를 받을 수 있을지도?");
+		Font bonusfont = new Font("HY견고딕", Font.BOLD, 12);
+		bonus.setFont(bonusfont);
+		bonus.setBounds(380, 183, 200, 30);
+
+		PtBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
@@ -245,10 +244,22 @@ public class MainGrowStudent extends JFrame {
 				new N_PartTime(Lb1, Lb2);
 		}); // N_PartTime 클래스 이동
 
-		JButton N_PlayBtn = new JButton("친구와 놀러가기");
-		N_MenuPanel.add(N_PlayBtn);
-		N_PlayBtn.setBounds(170, 468, 300, 48);
-		N_PlayBtn.addActionListener(event -> {
+		JButton PlayBtn = new JButton("친구와 놀기");
+		PlayBtn.setFont(활동선택버튼폰트);
+		PlayBtn.setBounds(430, 300, 130, 30);
+		PlayBtn.setBackground(new Color(243, 91, 182));
+		PlayBtn.setBorderPainted(false);
+		PlayBtn.setFocusPainted(false);
+
+		JLabel Playdetail = new JLabel("[요구 능력치: 체력 20 돈 30000]");
+		Playdetail.setFont(활동선택폰트);
+		Playdetail.setBounds(430, 330, 230, 30);
+
+		JLabel PlaydetailL = new JLabel("[얻을 수 있는 능력치: 친화력  1~20]");
+		PlaydetailL.setFont(활동선택폰트);
+		PlaydetailL.setBounds(410, 355, 230, 30);
+
+		PlayBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
@@ -260,27 +271,68 @@ public class MainGrowStudent extends JFrame {
 				new N_Play(Lb1, Lb2);
 		}); // N_Play 클래스 이동
 
-		JButton N_RestBtn = new JButton("휴식하기");
-		N_MenuPanel.add(N_RestBtn);
-		N_RestBtn.setBounds(170, 538, 300, 48);
-		N_RestBtn.addActionListener(event -> {
+		JButton RestBtn = new JButton("휴식하기");
+		RestBtn.setFont(활동선택버튼폰트);
+		RestBtn.setBounds(80, 250, 112, 30);
+		RestBtn.setBackground(new Color(89, 205, 242));
+		RestBtn.setFocusPainted(false);
+		RestBtn.setBorderPainted(false);
+
+		JLabel rdetail = new JLabel("[요구능력치: 없음]");
+		rdetail.setFont(활동선택폰트);
+		rdetail.setBounds(85, 280, 200, 30);
+
+		JLabel rdetailL = new JLabel("[얻을 수 있는 능력치: 체력 1~30]");
+		rdetailL.setFont(활동선택폰트);
+		rdetailL.setBounds(55, 305, 200, 30);
+
+		RestBtn.addActionListener(event -> {
 			new N_Rest(Lb1, Lb2);
 		}); // N_Rest 클래스 이동
 
 		NormalBtn.addActionListener(e -> {
-			WeekPanel.add(MBtn);
-			LevelPanel.setVisible(false);
-			contentPane.setVisible(true);
-			/*
-			 * N_MenuPanel.add(Lb1); N_MenuPanel.add(Lb2); N_MenuPanel.add(LBtn);
-			 * N_MenuPanel.add(N_SBtn); N_MenuPanel.add(N_PtBtn);
-			 * N_MenuPanel.add(N_PlayBtn); N_MenuPanel.add(N_RestBtn);
-			 * contentPane.add(N_MenuPanel);
-			 */
-		}); // 난이도 보통인 N_MenuPanel로 이동
+			N_MenuPanel.add(Lb1);
+			N_MenuPanel.add(dateLb);
+			N_MenuPanel.add(Lb2);
+			N_MenuPanel.add(LBtn);
+			N_MenuPanel.add(detail);
+			N_MenuPanel.add(detailL); // 강의버튼
+			N_MenuPanel.add(SBtn);
+			N_MenuPanel.add(sdetail);
+			N_MenuPanel.add(sdetailL); // 공부하기버튼
+			N_MenuPanel.add(PtBtn);
+			N_MenuPanel.add(pdetail);
+			N_MenuPanel.add(pdetailL);
+			N_MenuPanel.add(bonus); // 알바버튼
+			N_MenuPanel.add(PlayBtn);
+			N_MenuPanel.add(Playdetail);
+			N_MenuPanel.add(PlaydetailL); // 친구와놀기버튼
+			N_MenuPanel.add(RestBtn);
+			N_MenuPanel.add(rdetail);
+			N_MenuPanel.add(rdetailL); // 휴식버튼
 
-		H_MenuPanel.add(LBtn);
-		LBtn.setBounds(170, 258, 300, 48);
+			powers.setLayout(null);
+			powers.setBounds(25, 5, 80, 80);
+			powerlabel.setBounds(15, 15, 40, 30);
+			powerlabel.setFont(powerfont);
+			powers.add(powerlabel);
+			powers.setVisible(true);
+			contentPane.add(powers);
+
+			N_MenuPanel.setBounds(0, 110, 640, 640);
+			contentPane.add(N_MenuPanel);
+			LevelPanel.setVisible(false);
+			contentPane.setBounds(0, 0, 640, 109);
+			contentPane.setVisible(true);
+		}); // 난이도 보통인 N_MenuPanel로 이동
+		
+		JLabel Hdetail = new JLabel("[요구 능력치: 체력 30]");
+		Hdetail.setFont(활동선택폰트);
+		Hdetail.setBounds(197, 110, 230, 30);
+
+		JLabel HdetailL = new JLabel("[얻을 수 있는 능력치: 지식 5~20]");
+		HdetailL.setFont(활동선택폰트);
+		HdetailL.setBounds(155, 135, 230, 30);
 
 		LBtn.addActionListener(event -> {
 
@@ -296,10 +348,15 @@ public class MainGrowStudent extends JFrame {
 				new H_Lecture(Lb1, Lb2);
 		}); // H_Lecture 클래스 이동
 
-		JButton H_SBtn = new JButton("공부하기");
-		H_MenuPanel.add(H_SBtn);
-		H_SBtn.setBounds(170, 328, 300, 48);
-		H_SBtn.addActionListener(event -> {
+		JLabel Hsdetail = new JLabel("[요구능력치: 체력 15]");
+		Hsdetail.setFont(활동선택폰트);
+		Hsdetail.setBounds(245, 355, 230, 30);
+
+		JLabel HsdetailL = new JLabel("[얻을 수 있는 능력치: 지능 5~20]");
+		HsdetailL.setFont(활동선택폰트);
+		HsdetailL.setBounds(220, 380, 230, 30);
+		
+		SBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
@@ -308,10 +365,19 @@ public class MainGrowStudent extends JFrame {
 				new H_Study(Lb1, Lb2);
 		}); // H_Study 클래스 이동
 
-		JButton H_PtBtn = new JButton("알바가기");
-		H_MenuPanel.add(H_PtBtn);
-		H_PtBtn.setBounds(170, 398, 300, 48);
-		H_PtBtn.addActionListener(event -> {
+		JLabel Hpdetail = new JLabel("[요구 능력치: 체력 25]");
+		Hpdetail.setFont(활동선택폰트);
+		Hpdetail.setBounds(385, 133, 230, 30);
+
+		JLabel HpdetailL = new JLabel("[얻을 수 있는 능력치: 돈 2~40000]");
+		HpdetailL.setFont(활동선택폰트);
+		HpdetailL.setBounds(359, 158, 230, 30);
+
+		JLabel Hbonus = new JLabel("보너스를 받을 수 있을지도?");
+		Hbonus.setFont(bonusfont);
+		Hbonus.setBounds(380, 183, 200, 30);
+		
+		PtBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
@@ -320,10 +386,15 @@ public class MainGrowStudent extends JFrame {
 				new H_PartTime(Lb1, Lb2);
 		}); // H_PartTime 클래스 이동
 
-		JButton H_PlayBtn = new JButton("친구와 놀러가기");
-		H_MenuPanel.add(H_PlayBtn);
-		H_PlayBtn.setBounds(170, 468, 300, 48);
-		H_PlayBtn.addActionListener(event -> {
+		JLabel HPlaydetail = new JLabel("[요구 능력치: 체력 20 돈 30000]");
+		HPlaydetail.setFont(활동선택폰트);
+		HPlaydetail.setBounds(430, 330, 230, 30);
+
+		JLabel HPlaydetailL = new JLabel("[얻을 수 있는 능력치: 친화력  1~20]");
+		HPlaydetailL.setFont(활동선택폰트);
+		HPlaydetailL.setBounds(410, 355, 230, 30);
+		
+		PlayBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
@@ -335,53 +406,56 @@ public class MainGrowStudent extends JFrame {
 				new H_Play(Lb1, Lb2);
 		}); // H_Play 클래스 이동
 
-		JButton H_RestBtn = new JButton("휴식하기");
-		H_MenuPanel.add(H_RestBtn);
-		H_RestBtn.setBounds(170, 538, 300, 48);
-		H_RestBtn.addActionListener(event -> {
+		JLabel Hrdetail = new JLabel("[요구능력치: 없음]");
+		Hrdetail.setFont(활동선택폰트);
+		Hrdetail.setBounds(85, 280, 200, 30);
+
+		JLabel HrdetailL = new JLabel("[얻을 수 있는 능력치: 체력 1~30]");
+		HrdetailL.setFont(활동선택폰트);
+		HrdetailL.setBounds(55, 305, 200, 30);
+		
+		RestBtn.addActionListener(event -> {
 			new H_Rest(Lb1, Lb2);
 		}); // H_Rest 클래스 이동
 
 		HardBtn.addActionListener(e -> {
 			H_MenuPanel.add(Lb1);
+			H_MenuPanel.add(dateLb);
 			H_MenuPanel.add(Lb2);
 			H_MenuPanel.add(LBtn);
-			H_MenuPanel.add(H_SBtn);
-			H_MenuPanel.add(H_PtBtn);
-			H_MenuPanel.add(H_PlayBtn);
-			H_MenuPanel.add(H_RestBtn);
+			H_MenuPanel.add(Hdetail);
+			H_MenuPanel.add(HdetailL); // 강의버튼
+			H_MenuPanel.add(SBtn);
+			H_MenuPanel.add(Hsdetail);
+			H_MenuPanel.add(HsdetailL); // 공부하기버튼
+			H_MenuPanel.add(PtBtn);
+			H_MenuPanel.add(Hpdetail);
+			H_MenuPanel.add(HpdetailL);
+			H_MenuPanel.add(Hbonus); // 알바버튼
+			H_MenuPanel.add(PlayBtn);
+			H_MenuPanel.add(HPlaydetail);
+			H_MenuPanel.add(HPlaydetailL); // 친구와놀기버튼
+			H_MenuPanel.add(RestBtn);
+			H_MenuPanel.add(Hrdetail);
+			H_MenuPanel.add(HrdetailL); // 휴식버튼
+
+			powers.setLayout(null);
+			powers.setBounds(25, 5, 80, 80);
+			powerlabel.setBounds(15, 15, 40, 30);
+			powerlabel.setFont(powerfont);
+			powers.add(powerlabel);
+			powers.setVisible(true);
+			contentPane.add(powers);
+
+			H_MenuPanel.setBounds(0, 110, 640, 640);
 			contentPane.add(H_MenuPanel);
 			LevelPanel.setVisible(false);
+			contentPane.setBounds(0, 0, 640, 109);
 			contentPane.setVisible(true);
 		}); // 난이도 보통인 H_MenuPanel로 이동
 
-		Font f4 = new Font("휴먼엑스포", Font.BOLD, 25);
-		LBtn.setFont(f4);
-		N_SBtn.setFont(f4);
-		N_PtBtn.setFont(f4);
-		N_PlayBtn.setFont(f4);
-		N_RestBtn.setFont(f4);
-
-		LBtn.setFont(f4);
-		H_SBtn.setFont(f4);
-		H_PtBtn.setFont(f4);
-		H_PlayBtn.setFont(f4);
-		H_RestBtn.setFont(f4);
-
-		LBtn.setBackground(Color.WHITE);
-		N_SBtn.setBackground(Color.WHITE);
-		N_PtBtn.setBackground(Color.WHITE);
-		N_PlayBtn.setBackground(Color.WHITE);
-		N_RestBtn.setBackground(Color.WHITE);
-
-		LBtn.setBackground(Color.WHITE);
-		H_SBtn.setBackground(Color.WHITE);
-		H_PtBtn.setBackground(Color.WHITE);
-		H_PlayBtn.setBackground(Color.WHITE);
-		H_RestBtn.setBackground(Color.WHITE);
-
-		setSize(660, 700);
-		contentPane.setVisible(true);
+		setSize(655, 650);
+		setVisible(true);
 	}
 
 	public static void main(String[] args) {

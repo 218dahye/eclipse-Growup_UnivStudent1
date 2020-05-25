@@ -182,5 +182,32 @@ class init {
 		DdayNumber -= 1;
 		MT();
 	}
+	
+	static void N_Cold() {
+		int random = (int) (Math.random() * 15 + 1);
+		if(Power<=30) {
+			if(random>=13) {
+				Day += 1;
+				DdayNumber -= 1;
+				MT();
+				Power+=30;
+				JOptionPane.showMessageDialog(null, "체력이 약해져서 감기에 걸렸다!","\n오늘 하루동안 집에서 쉬어야겠다", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "하루동안 쉬어서 체력이 30만큼 올랐다!", "체력 회복", JOptionPane.INFORMATION_MESSAGE);
+			}
+		}
+	}
+	static void H_Cold() {
+		int random = (int) (Math.random() * 10 + 1);
+		if(Power<=40) {
+			if(random>=10) {
+				Day += 1;
+				DdayNumber -= 1;
+				MT();
+				Power+=20;
+				JOptionPane.showMessageDialog(null, "체력이 약해져서 감기에 걸렸다! \n오늘 하루동안 집에서 쉬어야겠다","감기", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "하루동안 쉬어서 체력이 20만큼 올랐다!", "체력 회복", JOptionPane.INFORMATION_MESSAGE);
+			}
+		}
+	}
 
 }
