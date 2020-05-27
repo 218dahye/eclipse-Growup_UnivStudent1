@@ -195,7 +195,7 @@ public class MainGrowStudent extends JFrame {
 			powers.add(체력확인레이블);
 			powers.setVisible(true);
 			contentPane.add(powers);
-			
+
 			HomePanel.setBounds(0, 73, 640, 640);
 			contentPane.setBounds(0, 0, 640, 109);
 			contentPane.add(HomePanel);
@@ -210,6 +210,15 @@ public class MainGrowStudent extends JFrame {
 			HomePanel.add(Lb2);
 			HomePanel.add(H_MoveBtn);
 
+			powers.setLayout(null);
+			powers.setBounds(25, 5, 80, 80);
+			체력확인레이블.setBounds(15, 15, 40, 30);
+			체력확인레이블.setFont(powerfont);
+			powers.add(체력확인레이블);
+			powers.setVisible(true);
+			contentPane.add(powers);
+
+			
 			HomePanel.setBounds(0, 73, 640, 640);
 			contentPane.setBounds(0, 0, 640, 109);
 			contentPane.add(HomePanel);
@@ -356,8 +365,6 @@ public class MainGrowStudent extends JFrame {
 			N_MenuPanel.add(rdetailL); // 휴식버튼
 			N_MenuPanel.add(BackBtn);
 
-			
-
 			N_MenuPanel.setBounds(0, 110, 640, 640);
 			contentPane.add(N_MenuPanel);
 			HomePanel.setVisible(false);
@@ -453,14 +460,6 @@ public class MainGrowStudent extends JFrame {
 			H_MenuPanel.add(Hrdetail);
 			H_MenuPanel.add(HrdetailL); // 휴식버튼
 			H_MenuPanel.add(BackBtn);
-
-			powers.setLayout(null);
-			powers.setBounds(25, 5, 80, 80);
-			체력확인레이블.setBounds(15, 15, 40, 30);
-			체력확인레이블.setFont(powerfont);
-			powers.add(체력확인레이블);
-			powers.setVisible(true);
-			contentPane.add(powers);
 
 			H_MenuPanel.setBounds(0, 110, 640, 640);
 			contentPane.add(H_MenuPanel);
