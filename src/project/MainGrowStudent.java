@@ -55,13 +55,16 @@ public class MainGrowStudent extends JFrame {
 	subImagePanel HomePanel = new subImagePanel(new ImageIcon("./image/Room.jpg").getImage());
 	subImagePanel N_MenuPanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
 	subImagePanel H_MenuPanel = new subImagePanel(new ImageIcon("./image/postit.jpg").getImage());
-	subImagePanel powers = new subImagePanel(new ImageIcon("./image/power.png").getImage()); // 이미지 패널 객체 생성
+	subImagePanel powers = new subImagePanel(new ImageIcon("./image/power.png").getImage());
+	subImagePanel intellis = new subImagePanel(new ImageIcon("./image/intelli.png").getImage());
+	subImagePanel moneys = new subImagePanel(new ImageIcon("./image/money.png").getImage());
+	subImagePanel friends = new subImagePanel(new ImageIcon("./image/friend.png").getImage());// 이미지 패널 객체 생성
 
 	JLabel click = new JLabel("click");
-	JLabel 체력확인레이블 = new JLabel("" + init.Power);
-	JLabel 지식확인레이블 = new JLabel("" + init.Intelli);
-	JLabel 돈확인레이블 = new JLabel("" + init.Money);
-	JLabel 친구확인레이블 = new JLabel("" + init.Friend);
+	JLabel PL = new JLabel();
+	JLabel IL = new JLabel();
+	JLabel ML = new JLabel();
+	JLabel FL = new JLabel();
 
 	Font 활동선택버튼폰트 = new Font("HY견고딕", Font.BOLD, 15);
 	Font 활동선택폰트 = new Font("HY견고딕", Font.PLAIN, 13);
@@ -128,13 +131,13 @@ public class MainGrowStudent extends JFrame {
 
 		JButton NormalBtn = new JButton(">> 보통");
 		NormalBtn.setFont(f1);
-		NormalBtn.setBackground(new Color(255, 255, 255));
+		NormalBtn.setBackground(Color.WHITE);
 		NormalBtn.setBounds(0, 410, 360, 45);
 		NormalBtn.setBorderPainted(false);
 
 		JButton HardBtn = new JButton("어려움 <<");
 		HardBtn.setFont(f1);
-		HardBtn.setBackground(new Color(255, 255, 255));
+		HardBtn.setBackground(Color.WHITE);
 		HardBtn.setBounds(290, 470, 360, 45);
 		HardBtn.setBorderPainted(false); // LevelPanel 화면
 
@@ -189,12 +192,40 @@ public class MainGrowStudent extends JFrame {
 			HomePanel.add(N_MoveBtn);
 
 			powers.setLayout(null);
-			powers.setBounds(25, 5, 80, 80);
-			체력확인레이블.setBounds(15, 15, 40, 30);
-			체력확인레이블.setFont(powerfont);
-			powers.add(체력확인레이블);
+			powers.setBounds(25, 5, 100, 100);
+			PL.setText("" + init.Power);
+			PL.setBounds(15, 5, 50, 50);
+			PL.setFont(powerfont);
+			powers.add(PL);
 			powers.setVisible(true);
 			contentPane.add(powers);
+
+			intellis.setLayout(null);
+			intellis.setBounds(110, 5, 100, 100);
+			IL.setText("" + init.Intelli);
+			IL.setBounds(18, 5, 50, 50);
+			IL.setFont(powerfont);
+			intellis.add(IL);
+			intellis.setVisible(true);
+			contentPane.add(intellis);
+
+			moneys.setLayout(null);
+			moneys.setBounds(190, 5, 100, 100);
+			ML.setText("" + init.Money);
+			ML.setBounds(5, 13, 100, 50);
+			ML.setFont(powerfont);
+			moneys.add(ML);
+			moneys.setVisible(true);
+			contentPane.add(moneys);
+
+			friends.setLayout(null);
+			friends.setBounds(290, 5, 100, 100);
+			FL.setText("" + init.Friend);
+			FL.setBounds(25, 5, 150, 50);
+			FL.setFont(powerfont);
+			friends.add(FL);
+			friends.setVisible(true);
+			contentPane.add(friends);
 
 			HomePanel.setBounds(0, 73, 640, 640);
 			contentPane.setBounds(0, 0, 640, 109);
@@ -211,12 +242,36 @@ public class MainGrowStudent extends JFrame {
 			HomePanel.add(H_MoveBtn);
 
 			powers.setLayout(null);
-			powers.setBounds(25, 5, 80, 80);
-			체력확인레이블.setBounds(15, 15, 40, 30);
-			체력확인레이블.setFont(powerfont);
-			powers.add(체력확인레이블);
+			powers.setBounds(25, 5, 100, 100);
+			PL.setBounds(15, 5, 50, 50);
+			PL.setFont(powerfont);
+			powers.add(PL);
 			powers.setVisible(true);
 			contentPane.add(powers);
+
+			intellis.setLayout(null);
+			intellis.setBounds(110, 5, 100, 100);
+			IL.setBounds(18, 5, 50, 50);
+			IL.setFont(powerfont);
+			intellis.add(IL);
+			intellis.setVisible(true);
+			contentPane.add(intellis);
+
+			moneys.setLayout(null);
+			moneys.setBounds(190, 5, 100, 100);
+			ML.setBounds(5, 13, 100, 50);
+			ML.setFont(powerfont);
+			moneys.add(ML);
+			moneys.setVisible(true);
+			contentPane.add(moneys);
+
+			friends.setLayout(null);
+			friends.setBounds(290, 5, 100, 100);
+			FL.setBounds(25, 5, 150, 50);
+			FL.setFont(powerfont);
+			friends.add(FL);
+			friends.setVisible(true);
+			contentPane.add(friends);
 
 			HomePanel.setBounds(0, 73, 640, 640);
 			contentPane.setBounds(0, 0, 640, 109);
@@ -235,7 +290,7 @@ public class MainGrowStudent extends JFrame {
 
 		JLabel detail = new JLabel("[요구 능력치: 체력 20, 돈 10000]");
 		detail.setFont(활동선택폰트);
-		detail.setBounds(197, 110, 230, 30);
+		detail.setBounds(157, 110, 230, 30);
 
 		JLabel detailL = new JLabel("[얻을 수 있는 능력치: 지식 5~20]");
 		detailL.setFont(활동선택폰트);
@@ -268,7 +323,7 @@ public class MainGrowStudent extends JFrame {
 
 		JLabel sdetailL = new JLabel("[얻을 수 있는 능력치: 지식 10~30]");
 		sdetailL.setFont(활동선택폰트);
-		sdetailL.setBounds(220, 380, 230, 30);
+		sdetailL.setBounds(205, 380, 230, 30);
 
 		N_SBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
@@ -276,7 +331,7 @@ public class MainGrowStudent extends JFrame {
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
 
 			} else
-				new N_Study();
+				new N_Study(PL,IL,ML,FL);
 		}); // N_Study 클래스 이동
 
 		JButton N_PtBtn = new JButton("알바가기");
@@ -288,11 +343,11 @@ public class MainGrowStudent extends JFrame {
 
 		JLabel pdetail = new JLabel("[요구 능력치: 체력 25]");
 		pdetail.setFont(활동선택폰트);
-		pdetail.setBounds(385, 133, 230, 30);
+		pdetail.setBounds(380, 133, 230, 30);
 
 		JLabel pdetailL = new JLabel("[얻을 수 있는 능력치: 돈 2~40000]");
 		pdetailL.setFont(활동선택폰트);
-		pdetailL.setBounds(359, 158, 230, 30);
+		pdetailL.setBounds(350, 158, 230, 30);
 
 		JLabel bonus = new JLabel("보너스를 받을 수 있을지도?");
 		Font bonusfont = new Font("HY견고딕", Font.BOLD, 12);
@@ -317,11 +372,11 @@ public class MainGrowStudent extends JFrame {
 
 		JLabel rdetail = new JLabel("[요구능력치: 체력 20 돈 20000]");
 		rdetail.setFont(활동선택폰트);
-		rdetail.setBounds(85, 280, 200, 30);
+		rdetail.setBounds(50, 280, 200, 30);
 
 		JLabel rdetailL = new JLabel("[얻을 수 있는 능력치: 친화력 10~30]");
 		rdetailL.setFont(활동선택폰트);
-		rdetailL.setBounds(55, 305, 200, 30);
+		rdetailL.setBounds(37, 305, 250, 30);
 
 		N_RestBtn.addActionListener(event -> {
 			new N_Rest(Lb1, Lb2);
@@ -343,11 +398,11 @@ public class MainGrowStudent extends JFrame {
 
 			HomePanel.setBounds(0, 73, 640, 640);
 			contentPane.setBounds(0, 0, 640, 109);
-
 			contentPane.add(HomePanel);
 			N_MenuPanel.setVisible(false);
-			HomePanel.setVisible(true);
-		});		//다시 이동하기 누르면 아무 창도 안뜸... 수정
+			contentPane.setVisible(true);
+			contentPane.setBackground(Color.WHITE);
+		}); // 다시 이동하기 누르면 아무 창도 안뜸... 수정
 
 		N_MoveBtn.addActionListener(e -> {
 			N_MenuPanel.add(Lb1);
@@ -379,12 +434,13 @@ public class MainGrowStudent extends JFrame {
 		H_LBtn.setBackground(new Color(153, 239, 90));
 		H_LBtn.setBorderPainted(false);
 		H_LBtn.setFocusPainted(false);
-		
+
 		JLabel Hdetail = new JLabel("[요구 능력치: 체력 30 돈 20000]");
 		Hdetail.setFont(활동선택폰트);
-		Hdetail.setBounds(197, 110, 230, 30);
+		Hdetail.setBounds(157, 110, 230, 30);
 
 		JLabel HdetailL = new JLabel("[얻을 수 있는 능력치: 지식 5~20]");
+
 		HdetailL.setFont(활동선택폰트);
 		HdetailL.setBounds(155, 135, 230, 30);
 
@@ -408,14 +464,14 @@ public class MainGrowStudent extends JFrame {
 		H_SBtn.setBackground(new Color(210, 89, 242));
 		H_SBtn.setFocusPainted(false);
 		H_SBtn.setBorderPainted(false);
-		
+
 		JLabel Hsdetail = new JLabel("[요구능력치: 체력 15]");
 		Hsdetail.setFont(활동선택폰트);
 		Hsdetail.setBounds(245, 355, 230, 30);
 
 		JLabel HsdetailL = new JLabel("[얻을 수 있는 능력치: 지식 5~20]");
 		HsdetailL.setFont(활동선택폰트);
-		HsdetailL.setBounds(220, 380, 230, 30);
+		HsdetailL.setBounds(205, 380, 230, 30);
 
 		H_SBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
@@ -432,14 +488,14 @@ public class MainGrowStudent extends JFrame {
 		H_PtBtn.setBackground(new Color(241, 228, 90));
 		H_PtBtn.setFocusPainted(false);
 		H_PtBtn.setBorderPainted(false);
-		
+
 		JLabel Hpdetail = new JLabel("[요구 능력치: 체력 30]");
 		Hpdetail.setFont(활동선택폰트);
-		Hpdetail.setBounds(385, 133, 230, 30);
+		Hpdetail.setBounds(380, 133, 230, 30);
 
 		JLabel HpdetailL = new JLabel("[얻을 수 있는 능력치: 돈 1~40000]");
 		HpdetailL.setFont(활동선택폰트);
-		HpdetailL.setBounds(359, 158, 230, 30);
+		HpdetailL.setBounds(350, 158, 230, 30);
 
 		JLabel Hbonus = new JLabel("보너스를 받을 수 있을지도?");
 		Hbonus.setFont(bonusfont);
@@ -460,19 +516,19 @@ public class MainGrowStudent extends JFrame {
 		H_RestBtn.setBackground(new Color(89, 205, 242));
 		H_RestBtn.setFocusPainted(false);
 		H_RestBtn.setBorderPainted(false);
-		
+
 		JLabel Hrdetail = new JLabel("[요구능력치: 체력 20 돈 30000]");
 		Hrdetail.setFont(활동선택폰트);
-		Hrdetail.setBounds(85, 280, 200, 30);
+		Hrdetail.setBounds(50, 280, 200, 30);
 
 		JLabel HrdetailL = new JLabel("[얻을 수 있는 능력치: 친화력 5~20]");
 		HrdetailL.setFont(활동선택폰트);
-		HrdetailL.setBounds(55, 305, 200, 30);
+		HrdetailL.setBounds(37, 305, 250, 30);
 
 		H_RestBtn.addActionListener(event -> {
 			new H_Rest(Lb1, Lb2);
 		}); // H_Rest 클래스 이동
-		
+
 		JButton H_BackBtn = new JButton("뒤로가기");
 		H_BackBtn.setFont(활동선택버튼폰트);
 		H_BackBtn.setBounds(430, 300, 130, 30);
@@ -489,12 +545,12 @@ public class MainGrowStudent extends JFrame {
 
 			HomePanel.setBounds(0, 73, 640, 640);
 			contentPane.setBounds(0, 0, 640, 109);
-
 			contentPane.add(HomePanel);
-			H_MenuPanel.setVisible(false);
-			HomePanel.setVisible(true);
-		});		//다시 이동하기 누르면 아무 창도 안뜸... 수정
-		
+			LevelPanel.setVisible(false);
+			contentPane.setVisible(true);
+			contentPane.setBackground(Color.WHITE);
+		}); // 다시 이동하기 누르면 아무 창도 안뜸... 수정
+
 		H_MoveBtn.addActionListener(e -> {
 			H_MenuPanel.add(Lb1);
 			H_MenuPanel.add(H_LBtn);
