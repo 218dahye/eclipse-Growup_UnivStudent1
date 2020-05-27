@@ -93,14 +93,14 @@ public class MainGrowStudent extends JFrame {
 
 		StartBt = new JButton(">> 게임 시작");
 		StartBt.setFont(f1);
-		StartBt.setBackground(new Color(255, 255, 255));
+		StartBt.setBackground(Color.WHITE);
 		StartBt.setBounds(0, 410, 360, 45);
 		StartBt.setBorderPainted(false);
 		StartBt.setFocusPainted(false);
 
 		EndBt = new JButton(" 게임 종료 <<");
 		EndBt.setFont(f1);
-		EndBt.setBackground(new Color(255, 255, 255));
+		EndBt.setBackground(Color.WHITE);
 		EndBt.setBounds(290, 470, 360, 45);
 		EndBt.setBorderPainted(false);
 		EndBt.setFocusPainted(false);
@@ -218,7 +218,6 @@ public class MainGrowStudent extends JFrame {
 			powers.setVisible(true);
 			contentPane.add(powers);
 
-			
 			HomePanel.setBounds(0, 73, 640, 640);
 			contentPane.setBounds(0, 0, 640, 109);
 			contentPane.add(HomePanel);
@@ -227,12 +226,12 @@ public class MainGrowStudent extends JFrame {
 			contentPane.setBackground(Color.WHITE);
 		}); // 난이도 보통인 HomePanel로 이동
 
-		JButton LBtn = new JButton("강의 듣기");
-		LBtn.setFont(활동선택버튼폰트);
-		LBtn.setBounds(195, 80, 130, 30);
-		LBtn.setBackground(new Color(153, 239, 90));
-		LBtn.setBorderPainted(false);
-		LBtn.setFocusPainted(false);
+		JButton N_LBtn = new JButton("강의 듣기");
+		N_LBtn.setFont(활동선택버튼폰트);
+		N_LBtn.setBounds(195, 80, 130, 30);
+		N_LBtn.setBackground(new Color(153, 239, 90));
+		N_LBtn.setBorderPainted(false);
+		N_LBtn.setFocusPainted(false);
 
 		JLabel detail = new JLabel("[요구 능력치: 체력 20]");
 		detail.setFont(활동선택폰트);
@@ -242,7 +241,7 @@ public class MainGrowStudent extends JFrame {
 		detailL.setFont(활동선택폰트);
 		detailL.setBounds(155, 135, 230, 30);
 
-		LBtn.addActionListener(event -> {
+		N_LBtn.addActionListener(event -> {
 
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
@@ -256,12 +255,12 @@ public class MainGrowStudent extends JFrame {
 				new N_Lecture(Lb1, Lb2);
 		}); // N_Lecture 클래스 이동
 
-		JButton SBtn = new JButton("공부하기");
-		SBtn.setFont(활동선택버튼폰트);
-		SBtn.setBounds(255, 325, 100, 30);
-		SBtn.setBackground(new Color(210, 89, 242));
-		SBtn.setFocusPainted(false);
-		SBtn.setBorderPainted(false);
+		JButton N_SBtn = new JButton("공부하기");
+		N_SBtn.setFont(활동선택버튼폰트);
+		N_SBtn.setBounds(255, 325, 100, 30);
+		N_SBtn.setBackground(new Color(210, 89, 242));
+		N_SBtn.setFocusPainted(false);
+		N_SBtn.setBorderPainted(false);
 
 		JLabel sdetail = new JLabel("[요구능력치: 체력 15]");
 		sdetail.setFont(활동선택폰트);
@@ -271,7 +270,7 @@ public class MainGrowStudent extends JFrame {
 		sdetailL.setFont(활동선택폰트);
 		sdetailL.setBounds(220, 380, 230, 30);
 
-		SBtn.addActionListener(event -> {
+		N_SBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
@@ -280,12 +279,12 @@ public class MainGrowStudent extends JFrame {
 				new N_Study(Lb1, Lb2);
 		}); // N_Study 클래스 이동
 
-		JButton PtBtn = new JButton("알바가기");
-		PtBtn.setFont(활동선택버튼폰트);
-		PtBtn.setBounds(390, 100, 100, 30);
-		PtBtn.setBackground(new Color(241, 228, 90));
-		PtBtn.setFocusPainted(false);
-		PtBtn.setBorderPainted(false);
+		JButton N_PtBtn = new JButton("알바가기");
+		N_PtBtn.setFont(활동선택버튼폰트);
+		N_PtBtn.setBounds(390, 100, 100, 30);
+		N_PtBtn.setBackground(new Color(241, 228, 90));
+		N_PtBtn.setFocusPainted(false);
+		N_PtBtn.setBorderPainted(false);
 
 		JLabel pdetail = new JLabel("[요구 능력치: 체력 25]");
 		pdetail.setFont(활동선택폰트);
@@ -300,21 +299,21 @@ public class MainGrowStudent extends JFrame {
 		bonus.setFont(bonusfont);
 		bonus.setBounds(380, 183, 200, 30);
 
-		PtBtn.addActionListener(event -> {
+		N_PtBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
 
 			} else
-				new N_PartTime(Lb1, Lb2);
+				new N_PartTime();
 		}); // N_PartTime 클래스 이동
 
-		JButton RestBtn = new JButton("놀기");
-		RestBtn.setFont(활동선택버튼폰트);
-		RestBtn.setBounds(80, 250, 112, 30);
-		RestBtn.setBackground(new Color(89, 205, 242));
-		RestBtn.setFocusPainted(false);
-		RestBtn.setBorderPainted(false);
+		JButton N_RestBtn = new JButton("놀기");
+		N_RestBtn.setFont(활동선택버튼폰트);
+		N_RestBtn.setBounds(80, 250, 112, 30);
+		N_RestBtn.setBackground(new Color(89, 205, 242));
+		N_RestBtn.setFocusPainted(false);
+		N_RestBtn.setBorderPainted(false);
 
 		JLabel rdetail = new JLabel("[요구능력치: 없음]");
 		rdetail.setFont(활동선택폰트);
@@ -324,18 +323,19 @@ public class MainGrowStudent extends JFrame {
 		rdetailL.setFont(활동선택폰트);
 		rdetailL.setBounds(55, 305, 200, 30);
 
-		RestBtn.addActionListener(event -> {
+		N_RestBtn.addActionListener(event -> {
 			new N_Rest(Lb1, Lb2);
 		}); // N_Rest 클래스 이동
 
-		JButton BackBtn = new JButton("뒤로가기");
-		BackBtn.setFont(활동선택버튼폰트);
-		BackBtn.setBounds(80, 250, 112, 30);
-		BackBtn.setBackground(Color.WHITE);
-		BackBtn.setFocusPainted(false);
-		BackBtn.setBorderPainted(false);
+		JButton N_BackBtn = new JButton("뒤로가기");
+		N_BackBtn.setFont(활동선택버튼폰트);
+		N_BackBtn.setBounds(430, 300, 130, 30);
+		N_BackBtn.setBackground(new Color(245, 92, 183));
+		N_BackBtn.setFocusPainted(false);
+		N_BackBtn.setBorderPainted(false);
 
-		BackBtn.addActionListener(event -> {
+		N_BackBtn.addActionListener(event -> {
+
 			HomePanel.add(Lb1);
 			HomePanel.add(dateLb);
 			HomePanel.add(Lb2);
@@ -343,27 +343,28 @@ public class MainGrowStudent extends JFrame {
 
 			HomePanel.setBounds(0, 73, 640, 640);
 			contentPane.setBounds(0, 0, 640, 109);
+
 			contentPane.add(HomePanel);
 			N_MenuPanel.setVisible(false);
 			HomePanel.setVisible(true);
-		});
+		});		//다시 이동하기 누르면 아무 창도 안뜸... 수정
 
 		N_MoveBtn.addActionListener(e -> {
 			N_MenuPanel.add(Lb1);
-			N_MenuPanel.add(LBtn);
+			N_MenuPanel.add(N_LBtn);
 			N_MenuPanel.add(detail);
 			N_MenuPanel.add(detailL); // 강의버튼
-			N_MenuPanel.add(SBtn);
+			N_MenuPanel.add(N_SBtn);
 			N_MenuPanel.add(sdetail);
 			N_MenuPanel.add(sdetailL); // 공부하기버튼
-			N_MenuPanel.add(PtBtn);
+			N_MenuPanel.add(N_PtBtn);
 			N_MenuPanel.add(pdetail);
 			N_MenuPanel.add(pdetailL);
 			N_MenuPanel.add(bonus); // 알바버튼
-			N_MenuPanel.add(RestBtn);
+			N_MenuPanel.add(N_RestBtn);
 			N_MenuPanel.add(rdetail);
 			N_MenuPanel.add(rdetailL); // 휴식버튼
-			N_MenuPanel.add(BackBtn);
+			N_MenuPanel.add(N_BackBtn);
 
 			N_MenuPanel.setBounds(0, 110, 640, 640);
 			contentPane.add(N_MenuPanel);
@@ -372,6 +373,13 @@ public class MainGrowStudent extends JFrame {
 			contentPane.setVisible(true);
 
 		});
+		JButton H_LBtn = new JButton("강의 듣기");
+		H_LBtn.setFont(활동선택버튼폰트);
+		H_LBtn.setBounds(195, 80, 130, 30);
+		H_LBtn.setBackground(new Color(153, 239, 90));
+		H_LBtn.setBorderPainted(false);
+		H_LBtn.setFocusPainted(false);
+		
 		JLabel Hdetail = new JLabel("[요구 능력치: 체력 30]");
 		Hdetail.setFont(활동선택폰트);
 		Hdetail.setBounds(197, 110, 230, 30);
@@ -380,7 +388,7 @@ public class MainGrowStudent extends JFrame {
 		HdetailL.setFont(활동선택폰트);
 		HdetailL.setBounds(155, 135, 230, 30);
 
-		LBtn.addActionListener(event -> {
+		H_LBtn.addActionListener(event -> {
 
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
@@ -394,6 +402,13 @@ public class MainGrowStudent extends JFrame {
 				new H_Lecture(Lb1, Lb2);
 		}); // H_Lecture 클래스 이동
 
+		JButton H_SBtn = new JButton("공부하기");
+		H_SBtn.setFont(활동선택버튼폰트);
+		H_SBtn.setBounds(255, 325, 100, 30);
+		H_SBtn.setBackground(new Color(210, 89, 242));
+		H_SBtn.setFocusPainted(false);
+		H_SBtn.setBorderPainted(false);
+		
 		JLabel Hsdetail = new JLabel("[요구능력치: 체력 15]");
 		Hsdetail.setFont(활동선택폰트);
 		Hsdetail.setBounds(245, 355, 230, 30);
@@ -402,7 +417,7 @@ public class MainGrowStudent extends JFrame {
 		HsdetailL.setFont(활동선택폰트);
 		HsdetailL.setBounds(220, 380, 230, 30);
 
-		SBtn.addActionListener(event -> {
+		H_SBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
@@ -411,6 +426,13 @@ public class MainGrowStudent extends JFrame {
 				new H_Study(Lb1, Lb2);
 		}); // H_Study 클래스 이동
 
+		JButton H_PtBtn = new JButton("알바가기");
+		H_PtBtn.setFont(활동선택버튼폰트);
+		H_PtBtn.setBounds(390, 100, 100, 30);
+		H_PtBtn.setBackground(new Color(241, 228, 90));
+		H_PtBtn.setFocusPainted(false);
+		H_PtBtn.setBorderPainted(false);
+		
 		JLabel Hpdetail = new JLabel("[요구 능력치: 체력 25]");
 		Hpdetail.setFont(활동선택폰트);
 		Hpdetail.setBounds(385, 133, 230, 30);
@@ -423,7 +445,7 @@ public class MainGrowStudent extends JFrame {
 		Hbonus.setFont(bonusfont);
 		Hbonus.setBounds(380, 183, 200, 30);
 
-		PtBtn.addActionListener(event -> {
+		H_PtBtn.addActionListener(event -> {
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
@@ -432,6 +454,13 @@ public class MainGrowStudent extends JFrame {
 				new H_PartTime(Lb1, Lb2);
 		}); // H_PartTime 클래스 이동
 
+		JButton H_RestBtn = new JButton("놀기");
+		H_RestBtn.setFont(활동선택버튼폰트);
+		H_RestBtn.setBounds(80, 250, 112, 30);
+		H_RestBtn.setBackground(new Color(89, 205, 242));
+		H_RestBtn.setFocusPainted(false);
+		H_RestBtn.setBorderPainted(false);
+		
 		JLabel Hrdetail = new JLabel("[요구능력치: 없음]");
 		Hrdetail.setFont(활동선택폰트);
 		Hrdetail.setBounds(85, 280, 200, 30);
@@ -440,26 +469,48 @@ public class MainGrowStudent extends JFrame {
 		HrdetailL.setFont(활동선택폰트);
 		HrdetailL.setBounds(55, 305, 200, 30);
 
-		RestBtn.addActionListener(event -> {
+		H_RestBtn.addActionListener(event -> {
 			new H_Rest(Lb1, Lb2);
 		}); // H_Rest 클래스 이동
+		
+		JButton H_BackBtn = new JButton("뒤로가기");
+		H_BackBtn.setFont(활동선택버튼폰트);
+		H_BackBtn.setBounds(430, 300, 130, 30);
+		H_BackBtn.setBackground(new Color(245, 92, 183));
+		H_BackBtn.setFocusPainted(false);
+		H_BackBtn.setBorderPainted(false);
 
+		H_BackBtn.addActionListener(event -> {
+
+			HomePanel.add(Lb1);
+			HomePanel.add(dateLb);
+			HomePanel.add(Lb2);
+			HomePanel.add(H_MoveBtn);
+
+			HomePanel.setBounds(0, 73, 640, 640);
+			contentPane.setBounds(0, 0, 640, 109);
+
+			contentPane.add(HomePanel);
+			H_MenuPanel.setVisible(false);
+			HomePanel.setVisible(true);
+		});		//다시 이동하기 누르면 아무 창도 안뜸... 수정
+		
 		H_MoveBtn.addActionListener(e -> {
 			H_MenuPanel.add(Lb1);
-			H_MenuPanel.add(LBtn);
+			H_MenuPanel.add(H_LBtn);
 			H_MenuPanel.add(Hdetail);
 			H_MenuPanel.add(HdetailL);// 강의버튼
-			H_MenuPanel.add(SBtn);
+			H_MenuPanel.add(H_SBtn);
 			H_MenuPanel.add(Hsdetail);
 			H_MenuPanel.add(HsdetailL); // 공부하기버튼
-			H_MenuPanel.add(PtBtn);
+			H_MenuPanel.add(H_PtBtn);
 			H_MenuPanel.add(Hpdetail);
 			H_MenuPanel.add(HpdetailL);
 			H_MenuPanel.add(Hbonus); // 알바버튼
-			H_MenuPanel.add(RestBtn);
+			H_MenuPanel.add(H_RestBtn);
 			H_MenuPanel.add(Hrdetail);
 			H_MenuPanel.add(HrdetailL); // 휴식버튼
-			H_MenuPanel.add(BackBtn);
+			H_MenuPanel.add(H_BackBtn);
 
 			H_MenuPanel.setBounds(0, 110, 640, 640);
 			contentPane.add(H_MenuPanel);
