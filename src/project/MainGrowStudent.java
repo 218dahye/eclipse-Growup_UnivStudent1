@@ -168,14 +168,14 @@ public class MainGrowStudent extends JFrame {
 		Lb2.setFont(Lb2font);
 		Lb2.setText("<체력 " + init.Power + " 지능 " + init.Intelli + " 돈 " + init.Money + " 친화력 " + init.Friend + ">"); // (N+H)ManuPanel화면
 
-		JButton N_MoveBtn = new JButton("이동하기");
+		JButton N_MoveBtn = new JButton("활동하기");
 		N_MoveBtn.setFont(f1);
 		N_MoveBtn.setBackground(Color.WHITE);
 		N_MoveBtn.setBounds(0, 410, 250, 45);
 		N_MoveBtn.setBorderPainted(false);
 		N_MoveBtn.setFocusPainted(false);
 
-		JButton H_MoveBtn = new JButton("이동하기");
+		JButton H_MoveBtn = new JButton("활동하기");
 		H_MoveBtn.setFont(f1);
 		H_MoveBtn.setBackground(Color.WHITE);
 		H_MoveBtn.setBounds(0, 410, 360, 45);
@@ -233,7 +233,7 @@ public class MainGrowStudent extends JFrame {
 		N_LBtn.setBorderPainted(false);
 		N_LBtn.setFocusPainted(false);
 
-		JLabel detail = new JLabel("[요구 능력치: 체력 20]");
+		JLabel detail = new JLabel("[요구 능력치: 체력 20, 돈 10000]");
 		detail.setFont(활동선택폰트);
 		detail.setBounds(197, 110, 230, 30);
 
@@ -266,7 +266,7 @@ public class MainGrowStudent extends JFrame {
 		sdetail.setFont(활동선택폰트);
 		sdetail.setBounds(245, 355, 230, 30);
 
-		JLabel sdetailL = new JLabel("[얻을 수 있는 능력치: 지능 5~20]");
+		JLabel sdetailL = new JLabel("[얻을 수 있는 능력치: 지식 10~30]");
 		sdetailL.setFont(활동선택폰트);
 		sdetailL.setBounds(220, 380, 230, 30);
 
@@ -276,7 +276,7 @@ public class MainGrowStudent extends JFrame {
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
 
 			} else
-				new N_Study(Lb1, Lb2);
+				new N_Study();
 		}); // N_Study 클래스 이동
 
 		JButton N_PtBtn = new JButton("알바가기");
@@ -315,11 +315,11 @@ public class MainGrowStudent extends JFrame {
 		N_RestBtn.setFocusPainted(false);
 		N_RestBtn.setBorderPainted(false);
 
-		JLabel rdetail = new JLabel("[요구능력치: 없음]");
+		JLabel rdetail = new JLabel("[요구능력치: 체력 20 돈 20000]");
 		rdetail.setFont(활동선택폰트);
 		rdetail.setBounds(85, 280, 200, 30);
 
-		JLabel rdetailL = new JLabel("[얻을 수 있는 능력치: 체력 1~30]");
+		JLabel rdetailL = new JLabel("[얻을 수 있는 능력치: 친화력 10~30]");
 		rdetailL.setFont(활동선택폰트);
 		rdetailL.setBounds(55, 305, 200, 30);
 
@@ -380,7 +380,7 @@ public class MainGrowStudent extends JFrame {
 		H_LBtn.setBorderPainted(false);
 		H_LBtn.setFocusPainted(false);
 		
-		JLabel Hdetail = new JLabel("[요구 능력치: 체력 30]");
+		JLabel Hdetail = new JLabel("[요구 능력치: 체력 30 돈 20000]");
 		Hdetail.setFont(활동선택폰트);
 		Hdetail.setBounds(197, 110, 230, 30);
 
@@ -413,7 +413,7 @@ public class MainGrowStudent extends JFrame {
 		Hsdetail.setFont(활동선택폰트);
 		Hsdetail.setBounds(245, 355, 230, 30);
 
-		JLabel HsdetailL = new JLabel("[얻을 수 있는 능력치: 지능 5~20]");
+		JLabel HsdetailL = new JLabel("[얻을 수 있는 능력치: 지식 5~20]");
 		HsdetailL.setFont(활동선택폰트);
 		HsdetailL.setBounds(220, 380, 230, 30);
 
@@ -433,11 +433,11 @@ public class MainGrowStudent extends JFrame {
 		H_PtBtn.setFocusPainted(false);
 		H_PtBtn.setBorderPainted(false);
 		
-		JLabel Hpdetail = new JLabel("[요구 능력치: 체력 25]");
+		JLabel Hpdetail = new JLabel("[요구 능력치: 체력 30]");
 		Hpdetail.setFont(활동선택폰트);
 		Hpdetail.setBounds(385, 133, 230, 30);
 
-		JLabel HpdetailL = new JLabel("[얻을 수 있는 능력치: 돈 2~40000]");
+		JLabel HpdetailL = new JLabel("[얻을 수 있는 능력치: 돈 1~40000]");
 		HpdetailL.setFont(활동선택폰트);
 		HpdetailL.setBounds(359, 158, 230, 30);
 
@@ -461,11 +461,11 @@ public class MainGrowStudent extends JFrame {
 		H_RestBtn.setFocusPainted(false);
 		H_RestBtn.setBorderPainted(false);
 		
-		JLabel Hrdetail = new JLabel("[요구능력치: 없음]");
+		JLabel Hrdetail = new JLabel("[요구능력치: 체력 20 돈 30000]");
 		Hrdetail.setFont(활동선택폰트);
 		Hrdetail.setBounds(85, 280, 200, 30);
 
-		JLabel HrdetailL = new JLabel("[얻을 수 있는 능력치: 체력 1~30]");
+		JLabel HrdetailL = new JLabel("[얻을 수 있는 능력치: 친화력 5~20]");
 		HrdetailL.setFont(활동선택폰트);
 		HrdetailL.setBounds(55, 305, 200, 30);
 

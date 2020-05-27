@@ -32,9 +32,6 @@ class N_PartTime extends JFrame {
 	JButton 패스트푸드알바 = new JButton("패스트푸드 알바하기");
 
 	JLabel 체력확인레이블 = new JLabel("" + init.Power);
-	JLabel pdetailL = new JLabel("[얻을 수 있는 능력치: 돈 + 40000]");
-	JLabel bonus = new JLabel("보너스를 받을 수 있을지도?");
-	JLabel pdetail = new JLabel();
 
 	JLabel 설명 = new JLabel("알바 면접을 합격한 곳은 제과점, 영화관, 패스트푸드점");
 	JLabel 설명1 = new JLabel("단 3곳이야");
