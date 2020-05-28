@@ -297,7 +297,7 @@ public class MainGrowStudent extends JFrame {
 		detailL.setBounds(155, 135, 230, 30);
 
 		N_LBtn.addActionListener(event -> {
-
+			init.N_Cold();
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지출력
@@ -326,6 +326,7 @@ public class MainGrowStudent extends JFrame {
 		sdetailL.setBounds(205, 380, 230, 30);
 
 		N_SBtn.addActionListener(event -> {
+			init.N_Cold();
 			if (init.Power <= 0) {
 				JOptionPane.showMessageDialog(null, "체력이 " + init.Power + "입니다" + "\n체력이 없어서 더 이상 할 수 없습니다", "경고",
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
@@ -391,14 +392,6 @@ public class MainGrowStudent extends JFrame {
 
 		N_BackBtn.addActionListener(event -> {
 
-			HomePanel.add(Lb1);
-			HomePanel.add(dateLb);
-			HomePanel.add(Lb2);
-			HomePanel.add(N_MoveBtn);
-
-			HomePanel.setBounds(0, 73, 640, 640);
-			contentPane.setBounds(0, 0, 640, 109);
-			contentPane.add(HomePanel);
 			N_MenuPanel.setVisible(false);
 			contentPane.setVisible(true);
 			contentPane.setBackground(Color.WHITE);

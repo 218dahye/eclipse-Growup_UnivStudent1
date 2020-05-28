@@ -118,19 +118,16 @@ class init {
 	 */
 
 	static void N_Cold() {
-		int random = (int) (Math.random() * 15 + 1);
-		for(int count=0; count<1; count++) {
+		for (int count = 0; count < 1; count++) {
 			if (Power <= 30) {
-				if (random >= 13) {
-					Day += 1;
-					DdayNumber -= 1;
-					MT();
-					Power += 30;
-					count++;
-					JOptionPane.showMessageDialog(null, "체력이 약해져서 감기에 걸렸다!", "\n오늘 하루동안 집에서 쉬어야겠다",
-							JOptionPane.WARNING_MESSAGE);
-					JOptionPane.showMessageDialog(null, "하루동안 쉬어서 체력이 30만큼 올랐다!", "체력 회복", JOptionPane.INFORMATION_MESSAGE);
-				}
+				Day += 1;
+				DdayNumber -= 1;
+				MT();
+				Power += 30;
+				count++;
+				JOptionPane.showMessageDialog(null, "체력이 약해져서 감기에 걸렸다!\n오늘 하루동안 집에서 쉬어야겠다","감기",
+						JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "하루동안 쉬어서 체력이 30만큼 올랐다!", "체력 회복", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
 	}

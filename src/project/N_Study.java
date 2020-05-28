@@ -30,7 +30,7 @@ class N_Study extends JFrame {
 	Font f4 = new Font("HY견고딕", Font.PLAIN, 23);
 
 	JButton SelectBtn = new JButton("활동선택");
-	JButton 일과끝내기 = new JButton("일과 종료");
+	JButton EndBtn = new JButton("일과 종료");
 	ImageIcon OS = new ImageIcon("./image/OS.png");
 	JButton button1 = new JButton(OS);
 	ImageIcon DB = new ImageIcon("./image/DB.png");
@@ -52,10 +52,6 @@ class N_Study extends JFrame {
 	JLabel 내용 = new JLabel();
 	JLabel 내용1 = new JLabel();
 	JLabel 내용2 = new JLabel();
-	JLabel 내용3 = new JLabel();
-	JLabel 내용4 = new JLabel();
-	JLabel 내용5 = new JLabel();
-	JLabel 내용6 = new JLabel();
 
 	N_Study(JLabel PL, JLabel IL, JLabel ML, JLabel FL) {
 		setTitle("공부하기");
@@ -108,36 +104,37 @@ class N_Study extends JFrame {
 		SelectPanel.setBackground(Color.WHITE);
 		contentPane.add(SelectPanel);
 
-		체력확인레이블.setText("" + init.Power);
-		체력확인레이블.setBounds(15, 5, 50, 50);
-		체력확인레이블.setFont(btnfont);
-		powers.add(체력확인레이블);
-		powers.setBounds(359, 559, 190, 80);
-		contentPane.add(powers);
-
-		지식확인레이블.setText("" + init.Intelli);
-		지식확인레이블.setBounds(18, 5, 50, 50);
-		지식확인레이블.setFont(btnfont);
-		intellis.add(지식확인레이블);
-		intellis.setBounds(430, 559, 190, 80);
-		contentPane.add(intellis);
-
-		돈확인레이블.setText("" + init.Money);
-		돈확인레이블.setBounds(5, 13, 100, 50);
-		돈확인레이블.setFont(btnfont);
-		moneys.add(돈확인레이블);
-		moneys.setBounds(490, 559, 190, 80);
-		contentPane.add(moneys);
-
-		친구확인레이블.setText("" + init.Friend);
-		친구확인레이블.setBounds(25, 5, 150, 50);
-		친구확인레이블.setFont(btnfont);
-		friends.add(친구확인레이블);
-		friends.setBounds(570, 570, 190, 80);
-		contentPane.add(friends);
-
 		button1.addActionListener(event -> {
 			init.N_Study();
+
+			체력확인레이블.setText("" + init.Power);
+			체력확인레이블.setBounds(15, 5, 50, 50);
+			체력확인레이블.setFont(btnfont);
+			powers.add(체력확인레이블);
+			powers.setBounds(359, 559, 190, 80);
+			contentPane.add(powers);
+
+			지식확인레이블.setText("" + init.Intelli);
+			지식확인레이블.setBounds(18, 5, 50, 50);
+			지식확인레이블.setFont(btnfont);
+			intellis.add(지식확인레이블);
+			intellis.setBounds(430, 559, 190, 80);
+			contentPane.add(intellis);
+
+			돈확인레이블.setText("" + init.Money);
+			돈확인레이블.setBounds(5, 13, 100, 50);
+			돈확인레이블.setFont(btnfont);
+			moneys.add(돈확인레이블);
+			moneys.setBounds(490, 559, 190, 80);
+			contentPane.add(moneys);
+
+			친구확인레이블.setText("" + init.Friend);
+			친구확인레이블.setBounds(25, 5, 150, 50);
+			친구확인레이블.setFont(btnfont);
+			friends.add(친구확인레이블);
+			friends.setBounds(570, 570, 190, 80);
+			contentPane.add(friends);
+
 			SelectBtn.setBounds(0, 30, 130, 30);
 			SelectBtn.setBackground(new Color(225, 80, 80));
 			SelectBtn.setFont(btnfont);
@@ -145,12 +142,12 @@ class N_Study extends JFrame {
 			SelectBtn.setFocusPainted(false);
 			contentPane.add(SelectBtn);
 
-			일과끝내기.setBounds(0, 70, 130, 30);
-			일과끝내기.setBackground(new Color(225, 80, 80));
-			일과끝내기.setFont(btnfont);
-			일과끝내기.setBorderPainted(false);
-			일과끝내기.setFocusPainted(false);
-			contentPane.add(일과끝내기);
+			EndBtn.setBounds(0, 70, 130, 30);
+			EndBtn.setBackground(new Color(225, 80, 80));
+			EndBtn.setFont(btnfont);
+			EndBtn.setBorderPainted(false);
+			EndBtn.setFocusPainted(false);
+			contentPane.add(EndBtn);
 
 			내용.setText("오픈소스소프트웨어 공부를 해야지! ");
 			내용.setBounds(10, 150, 640, 640);
@@ -182,6 +179,34 @@ class N_Study extends JFrame {
 		button2.addActionListener(event -> {
 			init.N_Study();
 
+			체력확인레이블.setText("" + init.Power);
+			체력확인레이블.setBounds(15, 5, 50, 50);
+			체력확인레이블.setFont(btnfont);
+			powers.add(체력확인레이블);
+			powers.setBounds(359, 559, 190, 80);
+			contentPane.add(powers);
+
+			지식확인레이블.setText("" + init.Intelli);
+			지식확인레이블.setBounds(18, 5, 50, 50);
+			지식확인레이블.setFont(btnfont);
+			intellis.add(지식확인레이블);
+			intellis.setBounds(430, 559, 190, 80);
+			contentPane.add(intellis);
+
+			돈확인레이블.setText("" + init.Money);
+			돈확인레이블.setBounds(5, 13, 100, 50);
+			돈확인레이블.setFont(btnfont);
+			moneys.add(돈확인레이블);
+			moneys.setBounds(490, 559, 190, 80);
+			contentPane.add(moneys);
+
+			친구확인레이블.setText("" + init.Friend);
+			친구확인레이블.setBounds(25, 5, 150, 50);
+			친구확인레이블.setFont(btnfont);
+			friends.add(친구확인레이블);
+			friends.setBounds(570, 570, 190, 80);
+			contentPane.add(friends);
+			
 			SelectBtn.setBounds(0, 30, 130, 30);
 			SelectBtn.setBackground(new Color(225, 80, 80));
 			SelectBtn.setFont(btnfont);
@@ -189,12 +214,12 @@ class N_Study extends JFrame {
 			SelectBtn.setFocusPainted(false);
 			contentPane.add(SelectBtn);
 
-			일과끝내기.setBounds(0, 70, 130, 30);
-			일과끝내기.setBackground(new Color(225, 80, 80));
-			일과끝내기.setFont(btnfont);
-			일과끝내기.setBorderPainted(false);
-			일과끝내기.setFocusPainted(false);
-			contentPane.add(일과끝내기);
+			EndBtn.setBounds(0, 70, 130, 30);
+			EndBtn.setBackground(new Color(225, 80, 80));
+			EndBtn.setFont(btnfont);
+			EndBtn.setBorderPainted(false);
+			EndBtn.setFocusPainted(false);
+			contentPane.add(EndBtn);
 
 			내용.setText("데이터베이스 공부를 해야지! ");
 			내용.setBounds(10, 130, 640, 640);
@@ -224,6 +249,35 @@ class N_Study extends JFrame {
 
 		button3.addActionListener(event -> {
 			init.N_Study();
+			
+			체력확인레이블.setText("" + init.Power);
+			체력확인레이블.setBounds(15, 5, 50, 50);
+			체력확인레이블.setFont(btnfont);
+			powers.add(체력확인레이블);
+			powers.setBounds(359, 559, 190, 80);
+			contentPane.add(powers);
+
+			지식확인레이블.setText("" + init.Intelli);
+			지식확인레이블.setBounds(18, 5, 50, 50);
+			지식확인레이블.setFont(btnfont);
+			intellis.add(지식확인레이블);
+			intellis.setBounds(430, 559, 190, 80);
+			contentPane.add(intellis);
+
+			돈확인레이블.setText("" + init.Money);
+			돈확인레이블.setBounds(5, 13, 100, 50);
+			돈확인레이블.setFont(btnfont);
+			moneys.add(돈확인레이블);
+			moneys.setBounds(490, 559, 190, 80);
+			contentPane.add(moneys);
+
+			친구확인레이블.setText("" + init.Friend);
+			친구확인레이블.setBounds(25, 5, 150, 50);
+			친구확인레이블.setFont(btnfont);
+			friends.add(친구확인레이블);
+			friends.setBounds(570, 570, 190, 80);
+			contentPane.add(friends);
+			
 			SelectBtn.setBounds(0, 30, 130, 30);
 			SelectBtn.setBackground(new Color(225, 80, 80));
 			SelectBtn.setFont(btnfont);
@@ -231,12 +285,12 @@ class N_Study extends JFrame {
 			SelectBtn.setFocusPainted(false);
 			contentPane.add(SelectBtn);
 
-			일과끝내기.setBounds(0, 70, 130, 30);
-			일과끝내기.setBackground(new Color(225, 80, 80));
-			일과끝내기.setFont(btnfont);
-			일과끝내기.setBorderPainted(false);
-			일과끝내기.setFocusPainted(false);
-			contentPane.add(일과끝내기);
+			EndBtn.setBounds(0, 70, 130, 30);
+			EndBtn.setBackground(new Color(225, 80, 80));
+			EndBtn.setFont(btnfont);
+			EndBtn.setBorderPainted(false);
+			EndBtn.setFocusPainted(false);
+			contentPane.add(EndBtn);
 
 			내용.setText("정보보호 공부를 해야지! ");
 			내용.setBounds(10, 130, 640, 640);
@@ -265,11 +319,19 @@ class N_Study extends JFrame {
 		});
 
 		SelectBtn.addActionListener(event -> {
-			PL.setText(""+init.Power);
-			IL.setText(""+init.Intelli);
-			ML.setText(""+init.Money);
-			FL.setText(""+init.Friend);
+			PL.setText("" + init.Power);
+			IL.setText("" + init.Intelli);
+			ML.setText("" + init.Money);
+			FL.setText("" + init.Friend);
 			JOptionPane.showMessageDialog(null, "활동 선택으로 이동합니다", "이동", JOptionPane.INFORMATION_MESSAGE); // 메시지
+			dispose();
+		});
+		EndBtn.addActionListener(event -> {
+			PL.setText("" + init.Power);
+			IL.setText("" + init.Intelli);
+			ML.setText("" + init.Money);
+			FL.setText("" + init.Friend);
+			JOptionPane.showMessageDialog(null, "집으로 이동합니다.", "이동", JOptionPane.INFORMATION_MESSAGE); // 메시지
 			dispose();
 		});
 		/*
