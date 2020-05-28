@@ -125,7 +125,7 @@ class init {
 				MT();
 				Power += 30;
 				count++;
-				JOptionPane.showMessageDialog(null, "체력이 약해져서 감기에 걸렸다!\n오늘 하루동안 집에서 쉬어야겠다","감기",
+				JOptionPane.showMessageDialog(null, "체력이 약해져서 감기에 걸렸다!\n오늘 하루동안 집에서 쉬어야겠다", "감기",
 						JOptionPane.WARNING_MESSAGE);
 				JOptionPane.showMessageDialog(null, "하루동안 쉬어서 체력이 30만큼 올랐다!", "체력 회복", JOptionPane.INFORMATION_MESSAGE);
 			}
@@ -151,6 +151,28 @@ class init {
 		Day += 1;
 		DdayNumber -= 1;
 		Money -= 20000;
+		MT();
+	}
+
+	static void H_Study() {
+		int random = (int) (Math.random() * 20 + 1);
+		if (random >= 17) {
+			Intelli += 20;
+			JOptionPane.showMessageDialog(null, "너무 열심히 했다.\n 지식이 20만큼 증가했다!", "너무 힘듦",
+					JOptionPane.INFORMATION_MESSAGE);
+		} else if (random >= 13 && random < 17) {
+			Intelli += 10;
+			JOptionPane.showMessageDialog(null, "오늘은 적당히 했다.\n 지식이 10만큼 증가했다!", "조금 기쁘네",
+					JOptionPane.INFORMATION_MESSAGE);
+		} else {
+			Money -= 10000;
+			Intelli += 5;
+			JOptionPane.showMessageDialog(null, "공부를 하다가 먹을 것을 사먹었다.\n돈이 1만원 감소하고 지식이 5만큼 증가했다!", "넘나 귀찮은 것",
+					JOptionPane.INFORMATION_MESSAGE);
+		}
+		Power -= 20;
+		Day += 1;
+		DdayNumber -= 1;
 		MT();
 	}
 

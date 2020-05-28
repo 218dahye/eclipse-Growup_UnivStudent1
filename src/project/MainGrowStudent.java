@@ -458,7 +458,7 @@ public class MainGrowStudent extends JFrame {
 		H_SBtn.setFocusPainted(false);
 		H_SBtn.setBorderPainted(false);
 
-		JLabel Hsdetail = new JLabel("[요구능력치: 체력 15]");
+		JLabel Hsdetail = new JLabel("[요구능력치: 체력 20]");
 		Hsdetail.setFont(활동선택폰트);
 		Hsdetail.setBounds(245, 355, 230, 30);
 
@@ -472,7 +472,7 @@ public class MainGrowStudent extends JFrame {
 						JOptionPane.WARNING_MESSAGE); // 메시지 출력
 
 			} else
-				new H_Study(Lb1, Lb2);
+				new H_Study(PL,IL,ML,FL);
 		}); // H_Study 클래스 이동
 
 		JButton H_PtBtn = new JButton("알바가기");
