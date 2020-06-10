@@ -4,28 +4,24 @@ import javax.swing.JOptionPane;
 
 class init {
 	static int DdayNumber = 14;
-	static int Power = 100;
+	static int Power = 130;
 	static int Money = 50000;
 	static int Friend = 0;
 	static int Intelli = 0;
 	static int Month = 5;
 	static int Day = 1;
-	static String Daily[] = { "금", "토", "일", "월", "화", "수", "목" };
+	/* static String Daily[] = { "금", "토", "일", "월", "화", "수", "목" }; */
 	static String Today = null;
 	static int 이해도 = 0;
 
-	static int newpower;
 	static int 골격근량 = 0;
 
-	static void MT() {
-		if (Month == 5) {
-			Today = Daily[Day % 7 - 1];
-
-		} else if (Month == 5 && Day == 32) {
-			Day = 1;
-			Today = Daily[Day % 7 + 2];
-		}
-	}
+	/*
+	 * static void MT() { if (Month == 5) { Today = Daily[Day % 7 - 1];
+	 * 
+	 * } else if (Month == 5 && Day == 32) { Day = 1; Today = Daily[Day % 7 + 2]; }
+	 * }
+	 */
 
 	static void N_helth() {
 		int random = (int) (Math.random() * 20 + 1);
@@ -45,7 +41,7 @@ class init {
 		Power -= 20;
 		Day += 1;
 		DdayNumber -= 1;
-		MT();
+	//	MT();
 
 	}
 
@@ -67,7 +63,7 @@ class init {
 		Power -= 30;
 		Day += 1;
 		DdayNumber -= 1;
-		MT();
+		//MT();
 
 	}
 
@@ -92,9 +88,8 @@ class init {
 	}
 
 	static void 이해() {
-		이해도 += 5;
-		// DdayNumber--;
-		JOptionPane.showMessageDialog(null, "이해도가 5 증가했습니다!", "이해도", JOptionPane.INFORMATION_MESSAGE);
+		이해도 += 10;
+		JOptionPane.showMessageDialog(null, "이해도가 10 증가했습니다!", "이해도", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 	static void N_Lecture_power() {
@@ -115,16 +110,13 @@ class init {
 			JOptionPane.showMessageDialog(null, "강의 내용이 하나도 이해가 안돼.\n 지식이 5만큼 증가했다!", "강의듣기",
 					JOptionPane.INFORMATION_MESSAGE);
 		}
+		Day += 1;
+		DdayNumber -= 1;
 		Power -= 20;
 		Money -= 10000;
-		MT();
+	//	MT();
 	}
 
-	static int newdaypower() {
-		newpower = 100;
-		Power = newpower;
-		return Power;
-	}
 
 	static int newday() {
 		DdayNumber = DdayNumber - 1;
@@ -153,7 +145,7 @@ class init {
 		DdayNumber -= 1;
 		Power -= 30;
 		Money -= 20000;
-		MT();
+	//	MT();
 	}
 
 	static void N_Study() {
@@ -176,7 +168,7 @@ class init {
 		Power -= 15;
 		Day += 1;
 		DdayNumber -= 1;
-		MT();
+	//	MT();
 	}
 
 	static void N_money_up() {
@@ -196,18 +188,11 @@ class init {
 		Power -= 25;
 		Day += 1;
 		DdayNumber -= 1;
-		MT();
+//		MT();
 
 	}
 
-	static void N_friend_up() {
 
-		Money -= 20000;
-		Power -= 20;
-		Day += 1;
-		DdayNumber -= 1;
-		MT();
-	}
 
 	static void N_sing() {
 		Money -= 20000;
@@ -261,7 +246,7 @@ class init {
 		}
 		Day += 1;
 		DdayNumber -= 1;
-		MT();
+//		MT();
 	}
 
 	static void H_rest() {
@@ -282,7 +267,7 @@ class init {
 		}
 		Day += 1;
 		DdayNumber -= 1;
-		MT();
+//		MT();
 	}
 
 	static void H_intelli_up() {
@@ -305,7 +290,7 @@ class init {
 		Day += 1;
 		DdayNumber -= 1;
 		Money -= 20000;
-		MT();
+	//	MT();
 	}
 
 	static void H_Study() {
@@ -329,7 +314,7 @@ class init {
 		Power -= 20;
 		Day += 1;
 		DdayNumber -= 1;
-		MT();
+//		MT();
 	}
 
 	static void H_money_up() {
@@ -350,7 +335,7 @@ class init {
 		Power -= 30;
 		Day += 1;
 		DdayNumber -= 1;
-		MT();
+	//	MT();
 	}
 
 }

@@ -21,7 +21,6 @@ class H_Lecture extends JFrame {
    subImagePanel longs = new subImagePanel(new ImageIcon("./image/longp.png").getImage());
    subImagePanel shorts = new subImagePanel(new ImageIcon("./image/shortp.png").getImage());
    subImagePanel lecturelist = new subImagePanel(new ImageIcon("./image/lecturelist.png").getImage());
-
    subImagePanel HomePanel = new subImagePanel(new ImageIcon("./image/home.png").getImage());
    subImagePanel H_Selectpanel = new subImagePanel(new ImageIcon("./image/H_select_home.png").getImage());
    subImagePanel powers = new subImagePanel(new ImageIcon("./image/power.png").getImage());
@@ -243,7 +242,7 @@ class H_Lecture extends JFrame {
          contentPane.setBackground(Color.WHITE);
          contentPane.setVisible(true);
          init.이해();
-         init.MT();
+
 
       });
 
@@ -342,7 +341,7 @@ class H_Lecture extends JFrame {
          contentPane.setVisible(true);
 
          init.이해();
-         init.MT();
+
 
       });
 
@@ -441,7 +440,7 @@ class H_Lecture extends JFrame {
          contentPane.setVisible(true);
 
          init.이해();
-         init.MT();
+
 
       });
 
@@ -453,13 +452,13 @@ class H_Lecture extends JFrame {
          new H_Home(PL, IL, ML, FL, DL);
 
          SelectBtn.setVisible(false);
-//         EndBtn.setVisible(false);
+
 
          JLabel dateLb = new JLabel();
-         dateLb.setText("Today 2020 " + init.Month + "월" + init.Day + "일  " + init.Today + "요일");
+         dateLb.setText("Today 2020년 " + init.Month + "월" + init.Day + "일  " );
          Font datefont = new Font("HY견고딕", Font.PLAIN, 23);
          dateLb.setFont(datefont);
-         dateLb.setBounds(310, 10, 600, 40);
+         dateLb.setBounds(380, 10, 600, 40);
          dateLb.setVisible(true);
          HomePanel.add(dateLb);
 

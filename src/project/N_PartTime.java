@@ -187,13 +187,6 @@ class N_PartTime extends JFrame {
          SelectBtn.setFocusPainted(false);
          theater.add(SelectBtn);
 
-/*         EndBtn.setBounds(0, 70, 110, 30);
-         EndBtn.setBackground(new Color(93, 115, 145));
-         EndBtn.setFont(btnfont);
-         EndBtn.setBorderPainted(false);
-         EndBtn.setFocusPainted(false);
-         theater.add(EndBtn);*/
-
          Font 내용폰트 = new Font("HY견고딕", Font.PLAIN, 18);
          Font 내용6폰트 = new Font("HY견고딕", Font.BOLD, 12);
 
@@ -298,8 +291,6 @@ class N_PartTime extends JFrame {
          설명.setVisible(false);
          설명1.setVisible(false);
          설명2.setVisible(false);
-         // 설명3.setVisible(false);
-         // 설명4.setVisible(false);
          pizza.setVisible(false);
 
          contentPane.setBounds(0, 430, 655, 120);
@@ -322,13 +313,6 @@ class N_PartTime extends JFrame {
          SelectBtn.setBorderPainted(false);
          SelectBtn.setFocusPainted(false);
          pizza.add(SelectBtn);
-
-   /*      EndBtn.setBounds(0, 70, 110, 30);
-         EndBtn.setBackground(new Color(93, 115, 145));
-         EndBtn.setFont(btnfont);
-         EndBtn.setBorderPainted(false);
-         EndBtn.setFocusPainted(false);
-         pizza.add(EndBtn);*/
 
          내용.setText("피자 패스트푸드점에 출근했어. 오픈 전, 300개의 포장 박스를 접어야 해. ");
          내용.setBounds(10, 190, 650, 640);
@@ -426,8 +410,6 @@ class N_PartTime extends JFrame {
          설명.setVisible(false);
          설명1.setVisible(false);
          설명2.setVisible(false);
-         // 설명3.setVisible(false);
-         // 설명4.setVisible(false);
          pizza.setVisible(true);
          contentPane.setBackground(Color.WHITE);
          contentPane.setVisible(true);
@@ -451,12 +433,7 @@ class N_PartTime extends JFrame {
          SelectBtn.setFocusPainted(false);
          bakery.add(SelectBtn);
 
-   /*      EndBtn.setBounds(0, 70, 110, 30);
-         EndBtn.setBackground(new Color(93, 115, 145));
-         EndBtn.setFont(btnfont);
-         EndBtn.setBorderPainted(false);
-         EndBtn.setFocusPainted(false);
-         bakery.add(EndBtn);*/
+
 
          contentPane.setBackground(Color.WHITE);
 
@@ -564,8 +541,7 @@ class N_PartTime extends JFrame {
          설명.setVisible(false);
          설명1.setVisible(false);
          설명2.setVisible(false);
-         // 설명3.setVisible(false);
-         // 설명4.setVisible(false);
+      
          pizza.setVisible(false);
          theater.setVisible(false);
          contentPane.setBounds(0, 430, 655, 120);
@@ -580,13 +556,13 @@ class N_PartTime extends JFrame {
          new N_Home(PL, IL, ML, FL, DL);
 
          SelectBtn.setVisible(false);
-//         EndBtn.setVisible(false);
+
 
          JLabel dateLb = new JLabel();
-         dateLb.setText("Today 2020 " + init.Month + "월" + init.Day + "일  " + init.Today + "요일");
+         dateLb.setText("Today 2020년 " + init.Month + "월" + init.Day + "일  " );
          Font datefont = new Font("HY견고딕", Font.PLAIN, 23);
          dateLb.setFont(datefont);
-         dateLb.setBounds(310, 10, 600, 40);
+         dateLb.setBounds(380, 10, 600, 40);
          dateLb.setVisible(true);
          HomePanel.add(dateLb);
 

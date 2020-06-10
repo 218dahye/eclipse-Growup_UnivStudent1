@@ -122,10 +122,10 @@ public class H_Fitness extends JFrame {
 //         EndBtn.setVisible(false);
 
          JLabel dateLb = new JLabel();
-         dateLb.setText("Today 2020 " + init.Month + "월" + init.Day + "일  " + init.Today + "요일");
+         dateLb.setText("Today 2020년 " + init.Month + "월" + init.Day + "일  " );
          Font datefont = new Font("HY견고딕", Font.PLAIN, 23);
          dateLb.setFont(datefont);
-         dateLb.setBounds(310, 10, 600, 40);
+         dateLb.setBounds(380, 10, 600, 40);
          dateLb.setVisible(true);
          HomePanel.add(dateLb);
 

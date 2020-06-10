@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-public class N_Home extends JFrame {
+public class H_Home extends JFrame {
 
 	Container contentPane;
 
@@ -32,14 +32,16 @@ public class N_Home extends JFrame {
 	Font powerfont = new Font("HY헤드라인M", Font.BOLD, 15);
 	Font f1 = new Font("휴먼둥근헤드라인", Font.PLAIN, 22);
 
-	N_Home(JLabel PL, JLabel IL, JLabel ML, JLabel FL, JLabel DL) {
+	static int cnt=0;
+
+	H_Home(JLabel PL, JLabel IL, JLabel ML, JLabel FL, JLabel DL) {
 		setTitle("홈");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(655, 655);
 		contentPane = getContentPane();
 
 		JLabel dateLb = new JLabel();
-		  dateLb.setText("Today 2020년 " + init.Month + "월" + init.Day + "일  " );
+		dateLb.setText("Today 2020년 " + init.Month + "월" + init.Day + "일  ");
 		Font datefont = new Font("HY견고딕", Font.PLAIN, 23);
 		dateLb.setFont(datefont);
 		dateLb.setBounds(380, 10, 600, 40);
@@ -122,11 +124,10 @@ public class N_Home extends JFrame {
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setVisible(true);
 
-		if (init.Power <= 30) {
-			for (int cnt = 0; cnt < 1; cnt++) {
+		if (init.Power <= 40 && cnt == 0) {
+			for (cnt = 0; cnt < 1; cnt++) {
 				init.Day += 1;
 				init.DdayNumber -= 1;
-			//	init.MT();
 				init.Power += 20;
 				JOptionPane.showMessageDialog(null, "체력이 약해져서 감기에 걸렸다!\n오늘 하루동안 집에서 쉬어야겠다", "감기",
 						JOptionPane.WARNING_MESSAGE);
@@ -144,10 +145,10 @@ public class N_Home extends JFrame {
 				JOptionPane.showMessageDialog(null, "엔딩으로 이동합니다!", "엔딩", JOptionPane.INFORMATION_MESSAGE);
 				new CafeEnding();
 			} else if (init.골격근량 >= 40) {
-				JOptionPane.showMessageDialog(null, "히든 엔딩으로 이동합니다!", "엔딩", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "엔딩으로 이동합니다!", "엔딩", JOptionPane.INFORMATION_MESSAGE);
 				new ExerciseEnding();
 			} else if (init.이해도 >= 90) {
-				JOptionPane.showMessageDialog(null, "엔딩으로 이동합니다!", "엔딩", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "히든 엔딩으로 이동합니다!", "엔딩", JOptionPane.INFORMATION_MESSAGE);
 				new IntelliEnding();
 			} else if (init.Friend >= 85) {
 				JOptionPane.showMessageDialog(null, "엔딩으로 이동합니다!", "엔딩", JOptionPane.INFORMATION_MESSAGE);

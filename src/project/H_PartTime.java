@@ -564,8 +564,6 @@ class H_PartTime extends JFrame {
          설명.setVisible(false);
          설명1.setVisible(false);
          설명2.setVisible(false);
-         // 설명3.setVisible(false);
-         // 설명4.setVisible(false);
          pizza.setVisible(false);
          theater.setVisible(false);
          contentPane.setBounds(0, 430, 655, 120);
@@ -580,13 +578,12 @@ class H_PartTime extends JFrame {
          new H_Home(PL, IL, ML, FL, DL);
 
          SelectBtn.setVisible(false);
-//         EndBtn.setVisible(false);
 
          JLabel dateLb = new JLabel();
-         dateLb.setText("Today 2020 " + init.Month + "월" + init.Day + "일  " + init.Today + "요일");
+         dateLb.setText("Today 2020년 " + init.Month + "월" + init.Day + "일  " );
          Font datefont = new Font("HY견고딕", Font.PLAIN, 23);
          dateLb.setFont(datefont);
-         dateLb.setBounds(310, 10, 600, 40);
+         dateLb.setBounds(380, 10, 600, 40);
          dateLb.setVisible(true);
          HomePanel.add(dateLb);
 

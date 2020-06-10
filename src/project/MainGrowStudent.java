@@ -201,14 +201,14 @@ public class MainGrowStudent extends JFrame {
 
 		}); // StartBt 버튼 누르면 LevelPanel 난이도 선택 패널로 이동
 
-		init.MT();
+//		init.MT();
 
 		JLabel dateLb = new JLabel();
-		dateLb.setText("Today 2020 " + init.Month + "월" + init.Day + "일  " + init.Today + "요일");
+		  dateLb.setText("Today 2020년 " + init.Month + "월" + init.Day + "일  " );
 		Font datefont = new Font("HY견고딕", Font.PLAIN, 23);
 		dateLb.setFont(datefont);
-		dateLb.setBounds(310, 10, 600, 40);
-
+		dateLb.setBounds(380, 10, 600, 40);
+		
 		JButton N_MoveBtn = new JButton("활동하기");
 		N_MoveBtn.setFont(f1);
 		N_MoveBtn.setBackground(Color.WHITE);
